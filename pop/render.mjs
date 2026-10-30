@@ -17,6 +17,7 @@ const toUri = (p) => {
 };
 data.photo = toUri(data.photo);
 data.qr = toUri(data.qr);
+data.phone = toUri(data.phone);
 data.food.photo = toUri(data.food.photo);
 data.training.photo = toUri(data.training.photo);
 data.stretch.photo = toUri(data.stretch.photo);
