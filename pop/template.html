@@ -73,11 +73,12 @@ body{font-family:"Zen",sans-serif;font-weight:700;color:var(--ink);letter-spacin
 /* 筋・整 */
 .mini{left:40px;width:700px;height:252px}
 .mini .ribbon{left:34px}
-.mini .kanji{right:26px;top:-34px}
+.mini .kanji{right:-8px;top:-46px}
 .mini .body{position:absolute;left:26px;right:26px;top:44px;bottom:20px;display:flex;flex-direction:column;justify-content:space-between;gap:12px}
 .mini .row{display:flex;gap:22px;align-items:center;flex:1}
-.mini .row img{width:220px;height:130px;object-fit:cover;border-radius:12px;flex:none}
-.mini .desc{flex:1;font-size:21px;line-height:1.65;text-align:center}
+.mini .row img{width:250px;height:150px;object-fit:cover;object-position:68% 60%;border-radius:12px;flex:none}
+.mini .desc{flex:1;font-size:20px;line-height:1.65;text-align:center;padding-right:110px}
+.mini .row img+.desc{padding-right:70px}
 .train{--c:var(--train);--c-l:var(--train-l);--c-d:var(--train-d);top:948px}
 .stretch{--c:var(--str);--c-l:var(--str-l);--c-d:var(--str-d);top:1258px}
 
@@ -166,7 +167,7 @@ function render(d){
       <div class="ribbon">${esc(f.dish)}</div>
       ${f.photo?`<img class="dishimg" src="${f.photo}">`:""}
       <div class="kanji">食</div>
-      <div class="ing">今月のおすすめ食材は<b>${esc(f.ingredient)}</b></div>
+      <div class="ing">今月のおすすめ食材は<b style="font-size:${Math.min(34,Math.floor(180/[...f.ingredient].length))}px">${esc(f.ingredient)}</b></div>
       <div class="mat"><h4>材料（${esc(f.servings)}）</h4><ul>${f.materials.map(m=>`<li><span>${esc(m[0])}</span><span>${esc(m[1])}</span></li>`).join("")}</ul></div>
       <div class="how"><h4>作り方</h4><ol>${f.steps.map(s=>`<li>${esc(s)}</li>`).join("")}</ol>
         <div class="point"><i>ポイント</i><div>${br(f.point)}</div></div></div>

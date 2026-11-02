@@ -5,7 +5,7 @@ from rembg import new_session, remove
 
 src, dst = sys.argv[1], sys.argv[2]
 img = Image.open(src)
-out = remove(img, session=new_session("isnet-general-use"), alpha_matting=True)
+out = remove(img, session=new_session("u2net_human_seg"))
 out = out.crop(out.getbbox())  # 余白を切り詰める
 out.save(dst)
 print("出力:", dst, out.size)
