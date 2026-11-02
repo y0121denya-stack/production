@@ -20,7 +20,8 @@
    - 文章を整え、材料・作り方・ポイント・説明文を書き足して `months/YYYY-MM.json` を作る
    - スタッフ写真をダウンロードして `photos/` に置き、背景透過：`python3 remove_bg.py photos/元.jpg photos/staff.png`
    - 書き出し：`node render.mjs months/YYYY-MM.json` → A3縦の PDF（印刷用）と PNG（確認用）
-   - PDF・PNG をドライブの「今月のおすすめPOP」フォルダにアップロードする
+   - Canvaで編集したいとき：`node export_layout.mjs months/YYYY-MM.json` → `python3 build_pptx.py months/YYYY-MM.layout.json`
+     で部品ごとに分かれた `.pptx` を作り、Canvaのホームにドラッグ＆ドロップして読み込む（PDFだと1つのかたまりになり編集できない）
 
 ## ファイル
 
@@ -29,6 +30,7 @@
 | `template.html` | デザイン本体。月ごとの季節カラー（`THEMES`）もここ |
 | `render.mjs` | JSON を流し込んで PDF / PNG を書き出す |
 | `make_phone.py` | スマホ画面の切り出しとQR差し替え |
+| `export_layout.mjs` / `build_pptx.py` | Canva編集用の .pptx（文字・図形・写真がバラバラの部品）を作る |
 | `remove_bg.py` | スタッフ写真の背景透過（rembg・無料） |
 | `setup.sh` | フォントと rembg の準備（新しい環境で最初に1回） |
 | `months/*.json` | 毎月の内容 |

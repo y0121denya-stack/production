@@ -64,7 +64,7 @@ body{font-family:"Zen",sans-serif;font-weight:700;color:var(--ink);letter-spacin
 .food .how{position:absolute;left:454px;top:34px;right:26px}
 .food .how ol{list-style:none;counter-reset:s;font-size:16px;line-height:1.45}
 .food .how ol li{counter-increment:s;padding-left:30px;position:relative;margin-bottom:2px}
-.food .how ol li::before{content:counter(s);position:absolute;left:0;top:3px;width:21px;height:21px;border-radius:50%;background:var(--c);color:#fff;font-size:13px;text-align:center;line-height:21px}
+.food .how ol li .n{position:absolute;left:0;top:3px;width:21px;height:21px;border-radius:50%;background:var(--c);color:#fff;font-size:13px;text-align:center;line-height:21px}
 .food .how .point{margin-top:6px;font-size:16px;padding:7px 12px}
 .food .dishimg{position:absolute;right:30px;top:36px;width:196px;height:196px;border-radius:50%;object-fit:cover;border:5px solid #fff;outline:2px solid var(--c)}
 .food .fpoint{position:absolute;left:206px;right:26px;bottom:18px}
@@ -168,7 +168,7 @@ function render(d){
       <div class="kanji">食</div>
       <div class="ing">今月のおすすめ食材は<b style="font-size:${Math.min(34,Math.floor(160/[...f.ingredient].length))}px">${esc(f.ingredient)}</b></div>
       <div class="mat"><h4>材料（${esc(f.servings)}）</h4><ul>${f.materials.map(m=>`<li><span>${esc(m[0])}</span><span>${esc(m[1])}</span></li>`).join("")}</ul></div>
-      <div class="how"><h4>作り方</h4><ol>${f.steps.map(s=>`<li>${esc(s)}</li>`).join("")}</ol></div>
+      <div class="how"><h4>作り方</h4><ol>${f.steps.map((s,i)=>`<li><span class="n">${i+1}</span>${esc(s)}</li>`).join("")}</ol></div>
       <div class="point fpoint"><i>ポイント</i><div>${br(f.point)}</div></div>
     </div>
     ${mini("train","筋",d.training)}
