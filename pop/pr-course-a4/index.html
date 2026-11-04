@@ -56,8 +56,8 @@
   /* ===== コースパネル ===== */
   .panel{position:absolute;top:44mm;width:128mm;height:122mm;background:rgba(255,255,255,.92);border-radius:6mm;
     border:.7mm solid;overflow:hidden}
-  .panel.pi{left:8mm;border-color:var(--sage);background:linear-gradient(180deg,#fffdf6 0%,#f6eef0 55%,#f2d9e3 100%)}
-  .panel.ru{right:8mm;border-color:var(--blue);background:linear-gradient(180deg,#fbfdff 0%,#e7f2fa 55%,#cfe4f4 100%)}
+  .panel.pi{left:8mm;border-color:var(--pink);background:#fff}
+  .panel.ru{right:8mm;border-color:var(--blue);background:#fff}
   .photos{position:relative;height:47mm;display:flex;gap:1mm}
   .photos img{height:100%;object-fit:cover;display:block}
   .pi .photos img:nth-child(1){width:48%;object-position:20% 50%}
@@ -116,10 +116,10 @@
   body.canva .h{clip-path:none;border-radius:3mm}
   body.canva .fee{background-image:none;background:#fff;border-color:var(--pink) var(--blue) var(--blue) var(--pink)}
   body.canva .abc .tag{background:var(--sage)}
-  .sub{background:none;padding:0;border-radius:0}
+  .sub{background:linear-gradient(90deg,var(--pink) 0%,var(--pink) 38%,var(--blue) 62%,var(--blue) 100%);padding:0;border-radius:20mm}
   .sub span{display:inline-block;padding:1.2mm 6mm;color:#fff}
-  .sub .sp{background:linear-gradient(90deg,#e889ab,#c9557c);border-radius:20mm 0 0 20mm}
-  .sub .sr{background:linear-gradient(90deg,#1d6fa8,#4aa6e0);border-radius:0 20mm 20mm 0}
+  .sub .sp{background:none}
+  .sub .sr{background:none}
 </style>
 </head>
 <body>
