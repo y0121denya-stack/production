@@ -110,6 +110,16 @@
   .foot{position:absolute;left:10mm;right:10mm;bottom:3.2mm;font-size:7.6pt;color:#555;display:flex;justify-content:space-between}
   .foot .hand{font-size:10pt;color:var(--sage)}
   .foot .hand b{color:var(--blue);font-weight:600}
+  /* ===== Canva取り込み用（body.canva）：編集しやすいよう、文字の画像化・分割の原因になる装飾を外す ===== */
+  body.canva *{letter-spacing:0 !important;box-shadow:none !important}
+  body.canva .title .r{background:none;-webkit-background-clip:border-box;background-clip:border-box;color:var(--blue)}
+  body.canva .h{clip-path:none;border-radius:3mm}
+  body.canva .fee{background-image:none;background:#fff;border-color:var(--pink) var(--blue) var(--blue) var(--pink)}
+  body.canva .abc .tag{background:var(--sage)}
+  .sub{background:none;padding:0;border-radius:0}
+  .sub span{display:inline-block;padding:1.2mm 6mm;color:#fff}
+  .sub .sp{background:var(--pink);border-radius:20mm 0 0 20mm}
+  .sub .sr{background:var(--blue);border-radius:0 20mm 20mm 0}
 </style>
 </head>
 <body>
@@ -118,7 +128,7 @@
   <header>
     <div class="catch hand">シンプルだから続く。走るって、もっと楽しくできる。</div>
     <h1 class="title"><span class="p">ピラティス</span><span class="amp">＆</span><span class="r">ランニング</span></h1>
-    <div class="sub">初心者向け ２つのコース</div>
+    <div class="sub"><span class="sp">初心者向け</span><span class="sr">２つのコース</span></div>
   </header>
 
   <!-- 共通料金 -->
