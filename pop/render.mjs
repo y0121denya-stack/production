@@ -28,6 +28,12 @@ const page = await browser.newPage({ viewport: { width: 1123, height: 1587 }, de
 await page.addInitScript((d) => { window.POP_DATA = d; }, data);
 await page.goto("file://" + path.join(here, "template.html"));
 await page.evaluate(() => document.fonts.ready);
+// 重なりチェック：タイトル枠と丸（外側の線を含む）がぶつかっていないか
+const clash = await page.evaluate(() => [...document.querySelectorAll(".card")].flatMap((c) => {
+  const a = c.querySelector(".ribbon").getBoundingClientRect(), k = c.querySelector(".kanji").getBoundingClientRect(), o = 8;
+  return a.left < k.right + o && a.right > k.left - o && a.top < k.bottom + o && a.bottom > k.top - o ? [c.querySelector(".kanji").textContent] : [];
+}));
+if (clash.length) console.warn("⚠ タイトル枠と丸が重なっています:", clash.join("・"));
 const out = jsonPath.replace(/\.json$/, "");
 await page.screenshot({ path: out + ".png" });
 await page.pdf({ path: out + ".pdf", width: "297mm", height: "420mm", printBackground: true, pageRanges: "1" });
