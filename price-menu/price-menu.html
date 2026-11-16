@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>料金表｜絆Style-gym Legame</title>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  :root{
+    --sage:#6f9886; --sage-dk:#4f7867; --sage-lt:#e9f2ed; --sage-xl:#f5f9f7;
+    --rose:#b9768c; --rose-lt:#f6e9ee;
+    --ink:#38443f; --sub:#7d8a85; --line:#d9e4de;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#fff}
+  body{font-family:"Zen Maru Gothic","IPAGothic",sans-serif;color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{width:210mm;height:297mm;position:relative;overflow:hidden;padding:14mm 13mm 11mm}
+  .leaf-l{position:absolute;left:-6mm;top:-4mm;width:34mm;opacity:.9}
+  .leaf-r{position:absolute;right:-8mm;top:-10mm;width:40mm;opacity:.9}
+
+  /* header */
+  header{text-align:center;position:relative;z-index:1}
+  .script{font-family:"Great Vibes",cursive;font-size:34px;color:var(--sage);line-height:1;letter-spacing:.02em}
+  h1{font-size:40px;font-weight:900;letter-spacing:.3em;margin:2px 0 0 .3em;line-height:1.15}
+  .shop{font-size:11px;color:var(--sub);letter-spacing:.2em;margin-top:2px}
+  .basics{display:flex;justify-content:center;gap:0;margin:7mm auto 0;width:150mm;border-radius:999px;overflow:hidden;background:var(--sage)}
+  .basics div{flex:1;color:#fff;padding:9px 0;font-weight:700;font-size:15px;letter-spacing:.12em}
+  .basics div + div{border-left:1px solid rgba(255,255,255,.45)}
+  .basics b{font-size:18px;letter-spacing:.06em}
+  .tax{font-size:10px;color:var(--sub);margin-top:5px;text-align:center}
+
+  /* section */
+  section{margin-top:8mm}
+  .sec-h{display:flex;align-items:baseline;gap:10px;border-bottom:2px solid var(--sage);padding-bottom:5px;margin-bottom:4mm}
+  .sec-h .no{font-family:"Great Vibes",cursive;color:var(--sage);font-size:26px;line-height:1}
+  .sec-h h2{font-size:22px;font-weight:900;letter-spacing:.14em}
+  .sec-h .note{margin-left:auto;font-size:13px;font-weight:700;color:var(--sage-dk);background:var(--sage-lt);border-radius:999px;padding:4px 14px;letter-spacing:.08em;align-self:center}
+
+  .tags{display:flex;flex-wrap:wrap;gap:5px}
+  .tag{font-size:11px;font-weight:700;color:var(--rose);background:var(--rose-lt);border-radius:999px;padding:3px 10px;letter-spacing:.06em;white-space:nowrap}
+
+  /* short-term cards */
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:6mm}
+  .card{border:1.5px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+  .card-h{background:var(--sage-xl);padding:10px 14px 10px;border-bottom:1.5px solid var(--line)}
+  .card-h h3{font-size:16px;font-weight:700;letter-spacing:.1em;margin-bottom:7px}
+  .card-h h3 .num{font-size:30px;font-weight:900;color:var(--sage-dk);letter-spacing:0;margin-right:2px}
+  table{width:100%;border-collapse:collapse}
+  .card table td{padding:11px 14px;border-top:1px solid var(--line);font-size:15px;font-weight:700}
+  .card table tr:first-child td{border-top:none}
+  .card .term{width:30%}
+  .card .cnt{width:24%;color:var(--sub);font-size:13px}
+  .price{text-align:right;font-size:21px !important;font-weight:900 !important;letter-spacing:.02em;white-space:nowrap}
+  .price small{font-size:13px;font-weight:700;margin-left:1px}
+
+  /* monthly table */
+  .monthly{border:1.5px solid var(--line);border-radius:12px;overflow:hidden}
+  .monthly .grp td{background:var(--sage-xl);font-size:12.5px;font-weight:700;color:var(--sage-dk);padding:8px 16px;letter-spacing:.08em;border-top:1.5px solid var(--line)}
+  .monthly .grp:first-child td{border-top:none}
+  .monthly .grp .tags{display:inline-flex;margin-left:10px;vertical-align:middle}
+  .monthly td{padding:11px 16px;border-top:1px solid var(--line);font-size:15px;font-weight:700;vertical-align:middle}
+  .course{width:30%}
+  .course .badge{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:var(--sage);color:#fff;font-weight:900;font-size:15px;margin-right:9px;vertical-align:middle}
+  .course .badge.g{background:var(--rose)}
+  .course .nm{display:inline-block;vertical-align:middle;line-height:1.25}
+  .course .nm small{display:block;font-size:10.5px;color:var(--sub);font-weight:500;letter-spacing:.04em;line-height:1.2}
+  .detail{color:var(--ink);font-size:14px !important}
+  .detail .sub2{display:block;font-size:12px;line-height:1.45}
+
+  footer{position:absolute;left:13mm;right:13mm;bottom:9mm;text-align:center;font-size:10.5px;color:var(--sub);letter-spacing:.06em}
+  footer .shopname{font-size:13px;color:var(--sage-dk);font-weight:700;letter-spacing:.14em;margin-bottom:2px}
+</style>
+</head>
+<body>
+<div class="page">
+  <img class="leaf-l" src="assets/leaf-a.png" alt="">
+  <img class="leaf-r" src="assets/leaf-b.png" alt="">
+
+  <header>
+    <div class="script">price menu</div>
+    <h1>料金表</h1>
+    <div class="basics">
+      <div>入会金 <b>22,000円</b></div>
+      <div>全コース ジム施設<b>通い放題</b></div>
+    </div>
+    <p class="tax">※入会金は全コース共通です。表示価格は全て税込です。</p>
+  </header>
+
+  <section>
+    <div class="sec-h"><span class="no">01</span><h2>短期集中コース</h2></div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-h">
+          <h3><span class="num">90</span>分コース</h3>
+          <div class="tags"><span class="tag">トレーニング</span><span class="tag">ストレッチ</span><span class="tag">整体</span><span class="tag">食事管理</span></div>
+        </div>
+        <table>
+          <tr><td class="term">1ヶ月</td><td class="cnt">9回</td><td class="price">170,000<small>円</small></td></tr>
+          <tr><td class="term">2ヶ月</td><td class="cnt">17回</td><td class="price">288,000<small>円</small></td></tr>
+          <tr><td class="term">3ヶ月</td><td class="cnt">25回</td><td class="price">388,000<small>円</small></td></tr>
+        </table>
+      </div>
+      <div class="card">
+        <div class="card-h">
+          <h3><span class="num">60</span>分コース</h3>
+          <div class="tags"><span class="tag">トレーニング</span><span class="tag">ストレッチ</span><span class="tag">整体 or 食事管理</span></div>
+        </div>
+        <table>
+          <tr><td class="term">1ヶ月</td><td class="cnt">9回</td><td class="price">110,000<small>円</small></td></tr>
+          <tr><td class="term">2ヶ月</td><td class="cnt">17回</td><td class="price">198,000<small>円</small></td></tr>
+          <tr><td class="term">3ヶ月</td><td class="cnt">25回</td><td class="price">270,000<small>円</small></td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-h"><span class="no">02</span><h2>月額コース</h2><span class="note">年会費 11,000円</span></div>
+    <div class="monthly">
+      <table>
+        <tr class="grp"><td colspan="3">パーソナル<span class="tags"><span class="tag">トレーニング</span><span class="tag">ストレッチ</span></span></td></tr>
+        <tr><td class="course"><span class="badge">A</span><span class="nm">Aコース</span></td><td class="detail">30分 × 2回／月</td><td class="price">12,100<small>円</small></td></tr>
+        <tr><td class="course"><span class="badge">B</span><span class="nm">Bコース</span></td><td class="detail">30分 × 5回／月</td><td class="price">24,200<small>円</small></td></tr>
+        <tr><td class="course"><span class="badge">C</span><span class="nm">Cコース</span></td><td class="detail">30分 × 9回／月</td><td class="price">38,940<small>円</small></td></tr>
+        <tr class="grp"><td colspan="3">グループレッスン</td></tr>
+        <tr><td class="course"><span class="badge g">P</span><span class="nm">Pコース<small>ピラティス</small></span></td><td class="detail">50分 × 2回／月</td><td class="price">12,100<small>円</small></td></tr>
+        <tr><td class="course"><span class="badge g">R</span><span class="nm">Rコース<small>ランニング</small></span></td><td class="detail"><span class="sub2">指導 30分 × 1回／月</span><span class="sub2">ランニング 60分 × 2回／月</span></td><td class="price">12,100<small>円</small></td></tr>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <div class="shopname">絆Style-gym Legame</div>
+  </footer>
+</div>
+</body>
+</html>
