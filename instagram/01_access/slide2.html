@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Zen+Old+Mincho:wght@600;700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --grad: linear-gradient(90deg,#eefaa0 0%,#c9f3c4 45%,#9fe6ea 100%);
+    --ink:#3a464a; --lime:#d6ff3a; --cyan:#0fb2c4; --mag:#b5006e;
+    --road:#ffffff; --block:#e9e5df; --bld:#d6cdbd; --orange:#f39556;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{width:1080px;height:1350px;background:#fff;font-family:"Zen Maru Gothic",sans-serif;overflow:hidden;position:relative;color:var(--ink)}
+  .band{position:absolute;left:0;right:0;height:132px;background:var(--grad);display:flex;align-items:center}
+  .top{top:0;justify-content:space-between;padding:0 78px}
+  .top img{height:68px}
+  .top .sep{width:2px;height:64px;background:rgba(58,70,74,.35)}
+  .top .st{font-family:"Zen Old Mincho",serif;font-weight:700;font-size:38px;letter-spacing:.06em}
+  .top .st b{font-size:46px}
+  .bottom{bottom:0;justify-content:center;font-family:"Zen Old Mincho",serif;font-weight:700;font-size:34px;letter-spacing:.06em}
+  .bottom .c{color:#0a8d9c} .bottom .m{color:var(--mag)}
+  .bottom .bar{display:inline-block;width:2px;height:40px;background:rgba(58,70,74,.4);margin:0 26px;vertical-align:middle}
+
+  .map{position:absolute;left:40px;top:180px;width:1000px;height:940px;border:4px solid #4a4a4a;border-radius:14px;background:var(--road);overflow:hidden}
+  .map > *{position:absolute}
+  .blk{background:var(--block);border-radius:6px}
+  .bld{background:var(--bld);border-radius:8px}
+  .card{white-space:nowrap;background:#fff;border:2px solid #555;border-radius:12px;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:900;line-height:1.3;color:#2d2d2d}
+  .stripe-h{background:repeating-linear-gradient(90deg,#b9b9b9 0 9px,transparent 9px 18px)}
+  .stripe-v{background:repeating-linear-gradient(180deg,#b9b9b9 0 9px,transparent 9px 18px)}
+  .exit{display:flex;align-items:center;gap:8px;font-weight:900;font-size:28px;color:#2d2d2d}
+  .exit i{font-style:normal;width:34px;height:34px;border-radius:50%;background:#3d3d3d;color:#fff;font-family:"Montserrat",sans-serif;font-size:20px;font-weight:800;display:flex;align-items:center;justify-content:center}
+  .line-label{background:var(--orange);color:#fff;font-weight:900;font-size:28px;padding:6px 14px;letter-spacing:.04em}
+  .dark{background:#231f20;border-radius:12px;color:var(--lime);display:flex;align-items:center;justify-content:center;text-align:center;font-weight:900}
+  .bubble{border-radius:48px;color:#fff;font-weight:900;display:flex;align-items:baseline;justify-content:center;gap:2px;font-size:42px;height:88px;padding:0 28px;white-space:nowrap}
+  .bubble b{font-family:"Montserrat",sans-serif;font-weight:800;font-size:62px;line-height:1;position:relative;top:6px}
+  .gymbld{background:linear-gradient(180deg,#d6ff3a,#7fe0d0 60%,#4fc9dc);border:2px solid #555;border-radius:8px}
+  .park{background:linear-gradient(90deg,#d6ff3a,#4fc9dc);border:2px solid #555;border-radius:8px;display:flex;align-items:center;padding-left:46px}
+  .park span{width:52px;height:52px;border-radius:50%;background:#231f20;border:3px solid #fff;color:#fff;font-family:"Montserrat",sans-serif;font-weight:800;font-size:32px;display:flex;align-items:center;justify-content:center}
+  .cta{position:absolute;left:0;right:0;top:1140px;display:flex;justify-content:center;align-items:center;gap:18px;font-weight:900;font-size:40px;letter-spacing:.08em}
+  .cta .play{width:54px;height:54px;border-radius:50%;background:#231f20;display:flex;align-items:center;justify-content:center}
+  .cta .arrow{display:inline-block;width:60px;height:4px;background:var(--ink);position:relative;margin-left:6px}
+  .cta .arrow::after{content:"";position:absolute;right:-2px;top:-8px;width:16px;height:16px;border-top:4px solid var(--ink);border-right:4px solid var(--ink);transform:rotate(45deg)}
+</style>
+</head>
+<body>
+  <div class="band top">
+    <img src="logo_dark.png" alt="">
+    <div class="sep"></div>
+    <div class="st">地下鉄琴似駅 徒歩<b>1</b>分</div>
+  </div>
+
+  <div class="map">
+    <!-- 街区（座標は枠の内側基準） -->
+    <div class="blk" style="left:0;top:0;width:270px;height:150px"></div>
+    <div class="blk" style="left:362px;top:0;width:406px;height:150px"></div>
+    <div class="blk" style="left:822px;top:0;width:178px;height:150px"></div>
+    <div class="blk" style="left:0;top:246px;width:270px;height:316px"></div>
+    <div class="blk" style="left:362px;top:246px;width:406px;height:316px"></div>
+    <div class="blk" style="left:822px;top:246px;width:178px;height:316px"></div>
+    <div class="blk" style="left:0;top:612px;width:270px;height:330px"></div>
+    <div class="blk" style="left:362px;top:612px;width:406px;height:330px"></div>
+    <div class="blk" style="left:822px;top:612px;width:178px;height:330px"></div>
+
+    <!-- 地下鉄 東西線 -->
+    <svg style="left:0;top:190px" width="1000" height="10"><line x1="0" y1="5" x2="1000" y2="5" stroke="#f39556" stroke-width="4" stroke-dasharray="22 12"/></svg>
+    <div class="line-label" style="left:612px;top:168px">東西線｜地下鉄琴似駅</div>
+
+    <!-- 横断歩道 -->
+    <div class="stripe-h" style="left:274px;top:90px;width:84px;height:44px"></div>
+    <div class="stripe-v" style="left:212px;top:154px;width:44px;height:88px"></div>
+    <div class="stripe-v" style="left:374px;top:154px;width:44px;height:88px"></div>
+    <div class="stripe-h" style="left:280px;top:256px;width:80px;height:44px"></div>
+
+    <!-- 周辺の目印 -->
+    <div class="card" style="left:14px;top:14px;width:242px;height:118px;font-size:34px">イオン札幌<br>琴似店</div>
+    <div class="card" style="left:378px;top:16px;width:374px;height:82px;font-size:26px">地下鉄琴似駅バスターミナル</div>
+    <div class="card" style="left:14px;top:292px;width:242px;height:100px;font-size:36px">北洋銀行</div>
+    <div class="bld" style="left:166px;top:410px;width:90px;height:62px"></div>
+    <div class="card" style="left:96px;top:490px;width:160px;height:60px;font-size:26px">富士メガネ</div>
+    <div class="card" style="left:378px;top:262px;width:126px;height:78px;font-size:19px;letter-spacing:-.02em">ケンタッキー</div>
+    <div class="bld" style="left:520px;top:262px;width:92px;height:78px"></div>
+    <div class="card" style="left:624px;top:262px;width:130px;height:78px;font-size:26px">小原眼科</div>
+    <div class="bld" style="left:378px;top:354px;width:96px;height:84px"></div>
+    <div class="bld" style="left:378px;top:452px;width:96px;height:96px"></div>
+    <div class="card" style="left:488px;top:432px;width:90px;height:116px;font-size:23px;background:#cfe6b5;border-color:#8aa86c">琴似<br>すみれ<br>公園</div>
+    <div class="bld" style="left:592px;top:432px;width:162px;height:116px"></div>
+    <div class="bld" style="left:378px;top:626px;width:92px;height:102px"></div>
+    <div class="bld" style="left:596px;top:626px;width:90px;height:66px"></div>
+    <div class="bld" style="left:700px;top:626px;width:54px;height:150px"></div>
+
+    <!-- 駐車場 -->
+    <div class="park" style="left:592px;top:352px;width:162px;height:66px"><span>P</span></div>
+
+    <!-- 道順（点線） -->
+    <svg style="left:0;top:0" width="1000" height="940">
+      <g fill="none" stroke-width="6" stroke-dasharray="8 7" stroke-linecap="butt">
+        <path d="M368 130 V614 H520" stroke="#0fb2c4"/>
+        <path d="M262 266 H368" stroke="#0fb2c4"/>
+        <path d="M760 386 V614 H560" stroke="#b5006e"/>
+      </g>
+    </svg>
+
+    <!-- 出口 -->
+    <div class="exit" style="left:351px;top:106px"><i>4</i>4番出口</div>
+    <div class="exit" style="left:108px;top:248px">1番出口<i>1</i></div>
+
+    <!-- レガーメ -->
+    <div class="gymbld" style="left:488px;top:626px;width:92px;height:136px"></div>
+    <svg style="left:504px;top:536px" width="60" height="84" viewBox="0 0 24 34"><path d="M12 1C5.9 1 1 5.9 1 12c0 8.3 11 21 11 21s11-12.7 11-21C23 5.9 18.1 1 12 1z" fill="#231f20"/><circle cx="12" cy="12" r="4.6" fill="#fff"/></svg>
+    <div class="dark" style="left:382px;top:774px;width:372px;height:132px"><img src="logo_lime.png" style="height:84px" alt=""></div>
+    <div class="dark" style="left:786px;top:344px;width:182px;height:164px;font-size:38px;line-height:1.2">レガーメ<br>専用<br>駐車場</div>
+    <svg style="left:754px;top:378px" width="34" height="16"><line x1="0" y1="8" x2="34" y2="8" stroke="#231f20" stroke-width="5"/></svg>
+
+    <!-- 吹き出し -->
+    <svg style="left:300px;top:600px" width="80" height="60"><path d="M0 60 L80 0 L40 60 Z" fill="#0fb2c4"/></svg>
+    <div class="bubble" style="left:96px;top:620px;background:var(--cyan)">徒歩<b>1</b>分</div>
+    <svg style="left:712px;top:632px" width="90" height="60"><path d="M0 0 L90 40 L40 60 Z" fill="#b5006e"/></svg>
+    <div class="bubble" style="left:700px;top:650px;background:var(--mag)">徒歩<b>30</b>秒</div>
+  </div>
+
+  <div class="cta">
+    <span class="play"><svg width="22" height="24" viewBox="0 0 22 24"><path d="M3 2 L20 12 L3 22 Z" fill="#d6ff3a"/></svg></span>
+    動画で道順をチェック<span class="arrow"></span>
+  </div>
+
+  <div class="band bottom">
+    <span>琴似駅から<span class="c">徒歩1分</span></span><span class="bar"></span><span>専用駐車場から<span class="m">徒歩30秒</span></span>
+  </div>
+</body>
+</html>
