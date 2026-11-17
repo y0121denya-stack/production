@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Zen+Old+Mincho:wght@600;700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --grad: linear-gradient(90deg,#eefaa0 0%,#c9f3c4 45%,#9fe6ea 100%);
+    --ink:#3a464a;
+    --lime:#d6ff3a;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{width:1080px;height:1350px;background:#fff;font-family:"Zen Maru Gothic",sans-serif;overflow:hidden}
+  .band{height:132px;background:var(--grad);display:flex;align-items:center;justify-content:center;position:relative}
+  .top{justify-content:space-between;padding:0 78px}
+  .top img{height:68px}
+  .top .sep{width:2px;height:64px;background:rgba(58,70,74,.35)}
+  .top .st{font-family:"Zen Old Mincho",serif;font-weight:700;color:var(--ink);font-size:38px;letter-spacing:.06em}
+  .top .st b{font-size:46px}
+  .photo{position:relative;height:1086px;overflow:hidden}
+  .photo img{position:absolute;height:1086px;left:-190px;top:0}
+  /* 顔の上は明るいまま、下側だけ暗くして文字を載せる */
+  .photo::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(40,25,40,0) 0%,rgba(40,25,40,0) 42%,rgba(45,28,45,.55) 62%,rgba(38,22,38,.88) 100%)}
+  .copy{position:absolute;left:0;right:0;bottom:70px;z-index:2;text-align:center;color:#fff}
+  .lead{font-size:44px;font-weight:700;letter-spacing:.12em;text-shadow:0 2px 10px rgba(0,0,0,.4)}
+  .lead::after{content:"";display:block;width:330px;height:3px;margin:16px auto 0;background:var(--lime);border-radius:3px}
+  .walk{display:flex;align-items:flex-end;justify-content:center;gap:6px;margin-top:6px;line-height:1;text-shadow:0 4px 18px rgba(0,0,0,.45)}
+  .walk .w{font-size:96px;font-weight:900;padding-bottom:22px}
+  .walk .n{font-family:"Montserrat",sans-serif;font-weight:800;font-size:250px;color:var(--lime);letter-spacing:-.02em}
+  .walk .m{font-size:120px;font-weight:900;padding-bottom:18px}
+  .title{font-size:64px;font-weight:900;letter-spacing:.08em;margin-top:6px;display:flex;align-items:center;justify-content:center;gap:12px;text-shadow:0 3px 14px rgba(0,0,0,.45)}
+  .title svg{width:52px;height:52px}
+  .access{font-family:"Montserrat",sans-serif;font-weight:600;font-size:34px;letter-spacing:.5em;margin-top:22px;padding-left:.5em;color:rgba(255,255,255,.85)}
+  .swipe{position:absolute;right:56px;bottom:36px;z-index:2;color:#fff;font-family:"Montserrat",sans-serif;font-weight:800;font-size:30px;letter-spacing:.08em;display:flex;align-items:center;gap:10px}
+  .swipe span{display:inline-block;width:46px;height:3px;background:#fff;position:relative}
+  .swipe span::after{content:"";position:absolute;right:-2px;top:-7px;width:14px;height:14px;border-top:3px solid #fff;border-right:3px solid #fff;transform:rotate(45deg)}
+  .bottom .box{border:2px solid rgba(58,70,74,.55);height:84px;width:880px;display:flex;align-items:center;justify-content:center;gap:22px;
+    font-family:"Zen Old Mincho",serif;font-weight:700;font-size:42px;letter-spacing:.14em;color:var(--ink)}
+  .bottom svg{width:58px;height:58px}
+</style>
+</head>
+<body>
+  <div class="band top">
+    <img src="logo_dark.png" alt="">
+    <div class="sep"></div>
+    <div class="st">地下鉄琴似駅 徒歩<b>1</b>分</div>
+  </div>
+
+  <div class="photo">
+    <img src="photo.jpg" alt="">
+    <div class="copy">
+      <div class="lead">地下鉄琴似駅から</div>
+      <div class="walk"><span class="w">徒歩</span><span class="n">1</span><span class="m">分</span></div>
+      <div class="title">レガーメまでの道のり
+        <svg viewBox="0 0 24 24" fill="#d6ff3a"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+      </div>
+      <div class="access">ACCESS</div>
+    </div>
+    <div class="swipe">Swipe<span></span></div>
+  </div>
+
+  <div class="band bottom">
+    <div class="box">専用駐車場あり
+      <svg viewBox="0 0 64 64" fill="none" stroke="#3a464a" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M10 38v-6l5-12c1-2.5 3-4 6-4h22c3 0 5 1.5 6 4l5 12v6"/><rect x="8" y="32" width="48" height="14" rx="4"/>
+        <path d="M14 46v6h8v-6M42 46v6h8v-6"/><circle cx="18" cy="39" r="2.5"/><circle cx="46" cy="39" r="2.5"/><path d="M17 30h30"/>
+      </svg>
+    </div>
+  </div>
+</body>
+</html>
