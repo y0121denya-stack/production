@@ -32,8 +32,9 @@
   .exit i{font-style:normal;width:34px;height:34px;border-radius:50%;background:#3d3d3d;color:#fff;font-family:"Montserrat",sans-serif;font-size:20px;font-weight:800;display:flex;align-items:center;justify-content:center}
   .line-label{background:var(--orange);color:#fff;font-weight:900;font-size:28px;padding:6px 14px;letter-spacing:.04em}
   .dark{background:#231f20;border-radius:12px;color:var(--lime);display:flex;align-items:center;justify-content:center;text-align:center;font-weight:900}
-  .bubble{border-radius:48px;color:#fff;font-weight:900;display:flex;align-items:baseline;justify-content:center;gap:2px;font-size:42px;height:88px;padding:0 28px;white-space:nowrap}
-  .bubble b{font-family:"Montserrat",sans-serif;font-weight:800;font-size:62px;line-height:1;position:relative;top:6px}
+  .bubble{border-radius:50px;color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center;height:104px;padding:0 42px;white-space:nowrap}
+  .bubble .t{display:flex;align-items:baseline;gap:4px;font-size:44px;line-height:1;position:relative;top:-7px}
+  .bubble b{font-family:"Montserrat",sans-serif;font-weight:800;font-size:66px;line-height:1;position:relative;top:7px}
   .gymbld{background:linear-gradient(180deg,#d6ff3a,#7fe0d0 60%,#4fc9dc);border:2px solid #555;border-radius:8px}
   .park{background:linear-gradient(90deg,#d6ff3a,#4fc9dc);border:2px solid #555;border-radius:8px;display:flex;align-items:center;padding-left:46px}
   .park span{width:52px;height:52px;border-radius:50%;background:#231f20;border:3px solid #fff;color:#fff;font-family:"Montserrat",sans-serif;font-weight:800;font-size:32px;display:flex;align-items:center;justify-content:center}
@@ -113,10 +114,10 @@
     <svg style="left:754px;top:378px" width="34" height="16"><line x1="0" y1="8" x2="34" y2="8" stroke="#231f20" stroke-width="5"/></svg>
 
     <!-- 吹き出し -->
-    <svg style="left:300px;top:600px" width="80" height="60"><path d="M0 60 L80 0 L40 60 Z" fill="#0fb2c4"/></svg>
-    <div class="bubble" style="left:96px;top:620px;background:var(--cyan)">徒歩<b>1</b>分</div>
-    <svg style="left:712px;top:632px" width="90" height="60"><path d="M0 0 L90 40 L40 60 Z" fill="#b5006e"/></svg>
-    <div class="bubble" style="left:700px;top:650px;background:var(--mag)">徒歩<b>30</b>秒</div>
+    <svg style="left:0;top:0" width="1000" height="940"><path d="M282 640 L366 620 L318 676 Z" fill="#0fb2c4"/><path d="M712 676 L700 628 L770 660 Z" fill="#b5006e"/></svg>
+    <div class="bubble" style="left:96px;top:620px;background:var(--cyan)"><span class="t">徒歩<b>1</b>分</span></div>
+    
+    <div class="bubble" style="left:676px;top:650px;background:var(--mag)"><span class="t">徒歩<b>30</b>秒</span></div>
   </div>
 
   <div class="cta">
