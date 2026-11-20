@@ -53,35 +53,35 @@
   .sec-h h2{font-size:22px;font-weight:900;letter-spacing:.14em}
   .sec-h .rule{flex:1;height:2px;background:repeating-linear-gradient(90deg,var(--sage) 0 6px,transparent 6px 11px)}
 
-  /* 支払い方法の凡例 */
-  .legend{display:flex;justify-content:center;gap:4mm;margin-bottom:4mm}
-  .legend .item{display:flex;align-items:center;gap:8px;background:#fff;border-radius:999px;padding:5px 16px 5px 6px;box-shadow:0 0 0 1.5px var(--line)}
-  .legend .how{font-size:13px;font-weight:900;letter-spacing:.06em}
-  .legend .how small{font-size:10px;font-weight:700;color:var(--sub);margin-left:4px;letter-spacing:.02em}
-  .off{font-weight:900;color:#fff;border-radius:999px;font-size:12px;padding:4.5px 10px 6.5px;letter-spacing:.04em}
-  .off b{font-size:17px;margin-right:1px;letter-spacing:0}
-  .off.c{background:var(--rose-dk)}
-  .off.k{background:var(--rose)}
-
-  /* 短期集中カード（左に見出し、右に期間ごとのタイル） */
-  .plan{display:grid;grid-template-columns:36mm 1fr;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 0 0 1.5px var(--line),0 3px 0 var(--line)}
-  .plan + .plan{margin-top:4mm}
-  .plan-h{background:var(--sage);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
-  .plan.p60 .plan-h{background:var(--sage-dk)}
-  .plan-h .k{font-size:12px;font-weight:700;letter-spacing:.2em;opacity:.9}
-  .plan-h .t{font-size:15px;font-weight:900;letter-spacing:.1em;margin-top:2px}
-  .plan-h .t .num{font-size:40px;letter-spacing:0;margin-right:2px;line-height:1}
-  .terms{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:8px}
-  .term{background:var(--sage-xl);border-radius:12px;padding:10px 14px 11px}
-  .term-top{display:flex;align-items:baseline;justify-content:space-between;border-bottom:1.5px dashed var(--line);padding-bottom:7px;margin-bottom:5px}
-  .term .mo{font-size:14px;font-weight:900;color:var(--sage-dk);letter-spacing:.06em}
-  .term .mo .n{font-size:24px;margin-right:1px}
-  .term .reg{font-size:10.5px;font-weight:700;color:var(--sub)}
-  .term .reg .was{margin-left:4px}
-  .row{display:flex;align-items:center;gap:8px;padding:4px 0}
-  .row .yen{margin-left:auto;font-size:23px}
-  .row.c .yen{color:var(--rose-dk)}
-  .row .how{font-size:10.5px;font-weight:700;color:var(--sub);line-height:1.3}
+  /* 比較表：列をそろえて数字を縦に比べやすく */
+  .cmp-wrap{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 0 0 1.5px var(--line),0 3px 0 var(--line)}
+  table.cmp{width:100%;border-collapse:separate;border-spacing:0;font-variant-numeric:tabular-nums}
+  .cmp col.c-term{width:19%} .cmp col.c-reg{width:21%} .cmp col.c-cash{width:30%} .cmp col.c-card{width:30%}
+  .cmp th{padding:10px 8px 10px;vertical-align:middle;text-align:center;font-weight:900;line-height:1}
+  .cmp th.reg{font-size:13px;color:var(--sub);letter-spacing:.1em;background:#f6f8f7}
+  .cmp th.cash{background:var(--rose-dk);color:#fff}
+  .cmp th.card{background:var(--rose);color:#fff}
+  .cmp th .how{display:block;font-size:12.5px;letter-spacing:.06em}
+  .cmp th .how small{display:block;font-size:9.5px;font-weight:700;opacity:.9;margin-top:3px;letter-spacing:.02em}
+  .cmp th .off{display:inline-flex;align-items:baseline;justify-content:center;line-height:1;background:#fff;border-radius:999px;padding:4px 12px 5px;margin-top:6px;font-size:12px;letter-spacing:.04em}
+  .cmp th.cash .off{color:var(--rose-dk)} .cmp th.card .off{color:var(--rose)}
+  .cmp th .off b{font-size:20px;margin-right:1px;letter-spacing:0}
+  .cmp th.blank{background:#f6f8f7}
+  .cmp tr.grp td{background:var(--sage);color:#fff;font-size:14px;font-weight:900;letter-spacing:.12em;padding:7px 14px 8px;text-align:left;line-height:1}
+  .cmp tr.grp.g60 td{background:var(--sage-dk)}
+  .cmp tr.grp td .num{font-size:22px;letter-spacing:0;margin-right:1px}
+  .cmp tr.grp td .k{font-size:11px;font-weight:700;opacity:.9;margin-right:8px;letter-spacing:.16em}
+  .cmp td{padding:11px 16px;border-top:1.5px solid var(--line);text-align:right;vertical-align:middle}
+  .cmp tr.grp + tr td{border-top:none}
+  .cmp td.term{text-align:center;font-size:14px;font-weight:900;color:var(--sage-dk);letter-spacing:.06em;background:#f6f8f7}
+  .cmp td.term .n{font-size:24px;margin-right:1px}
+  .cmp td.reg{background:#f6f8f7;color:var(--sub)}
+  .cmp td.reg .yen{font-size:16px;font-weight:700}
+  .cmp td.cash{background:var(--rose-xl)}
+  .cmp td.cash .yen{font-size:27px;color:var(--rose-dk)}
+  .cmp td.card .yen{font-size:27px;color:var(--ink)}
+  .cmp td.cash,.cmp th.cash{box-shadow:inset 1.5px 0 0 var(--rose-dk),inset -1.5px 0 0 var(--rose-dk)}
+  .cmp tr:last-child td.cash{box-shadow:inset 1.5px 0 0 var(--rose-dk),inset -1.5px 0 0 var(--rose-dk),inset 0 -1.5px 0 var(--rose-dk)}
 
   /* 月額コース特典 */
   .perks{display:grid;grid-template-columns:1fr 1fr;gap:5mm}
@@ -91,7 +91,7 @@
   .perk-b{padding:10px 14px 12px;flex:1;display:flex;flex-direction:column;justify-content:center}
   .perk .lead{font-size:11px;font-weight:700;color:var(--rose-dk);text-align:center;margin-bottom:6px}
   .forever{display:flex;align-items:center;justify-content:center;gap:8px}
-  .forever .eternal{background:var(--rose-dk);color:#fff;font-size:16px;font-weight:900;border-radius:999px;padding:6px 12px 7px;letter-spacing:.1em}
+  .forever .eternal{background:var(--rose-dk);color:#fff;font-size:16px;font-weight:900;border-radius:999px;padding:5px 12px 8px;letter-spacing:.1em}
   .forever .big{font-size:42px;font-weight:900;line-height:1;color:var(--ink)}
   .forever .big small{font-size:18px;margin-left:2px}
   .forever .big sup{font-size:9px;font-weight:700;vertical-align:top;position:relative;top:4px}
@@ -107,6 +107,15 @@
 
   .notice{text-align:center;font-size:10.5px;color:var(--sub);line-height:1.7;margin-top:7mm;letter-spacing:.04em}
   footer{position:absolute;left:0;right:0;bottom:7mm;text-align:center;font-size:13px;color:var(--sage-dk);font-weight:700;letter-spacing:.14em;z-index:2}
+  /* 特典カード内も列をそろえる（コース名｜通常｜▶｜特典） */
+  .prow{display:grid !important;grid-template-columns:1fr 78px 22px 104px;align-items:center;font-variant-numeric:tabular-nums}
+  .prow .nm{margin-right:0 !important}
+  .prow .was{text-align:right;font-size:13px}
+  .prow .arrow{justify-self:center;margin:0}
+  .prow .yen{text-align:right}
+  .prow.hd{padding:2px 2px 4px !important;margin-top:4px !important;border-top:none !important;font-size:10px;font-weight:700;color:var(--sub);letter-spacing:.1em}
+  .prow.hd span{text-align:right}
+  .prow.hd + .prow{border-top:1.5px dashed var(--line) !important;margin-top:0 !important}
 </style>
 </head>
 <body>
@@ -128,42 +137,19 @@
 
   <section>
     <div class="sec-h"><span class="no">01</span><h2>短期集中コース</h2><span class="rule"></span></div>
-
-    <div class="legend">
-      <div class="item"><span class="pill off c"><b>20</b>%OFF</span><span class="how">現金払い・振込</span></div>
-      <div class="item"><span class="pill off k"><b>15</b>%OFF</span><span class="how">クレジットカード・QR決済<small>（あとで分割OK）</small></span></div>
-    </div>
-
-    <div class="plan p90">
-      <div class="plan-h"><span class="k">短期集中</span><span class="t"><span class="num">90</span>分コース</span></div>
-      <div class="terms">
-        <div class="term">
-          <div class="term-top"><span class="mo"><span class="n">2</span>ヶ月</span><span class="reg">通常<span class="was">288,000円</span></span></div>
-          <div class="row c"><span class="pill off c"><b>20</b>%OFF</span><span class="how">現金払い<br>振込</span><span class="yen">230,400<small>円</small></span></div>
-          <div class="row k"><span class="pill off k"><b>15</b>%OFF</span><span class="how">カード<br>QR決済</span><span class="yen">244,800<small>円</small></span></div>
-        </div>
-        <div class="term">
-          <div class="term-top"><span class="mo"><span class="n">3</span>ヶ月</span><span class="reg">通常<span class="was">388,000円</span></span></div>
-          <div class="row c"><span class="pill off c"><b>20</b>%OFF</span><span class="how">現金払い<br>振込</span><span class="yen">310,400<small>円</small></span></div>
-          <div class="row k"><span class="pill off k"><b>15</b>%OFF</span><span class="how">カード<br>QR決済</span><span class="yen">329,800<small>円</small></span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="plan p60">
-      <div class="plan-h"><span class="k">短期集中</span><span class="t"><span class="num">60</span>分コース</span></div>
-      <div class="terms">
-        <div class="term">
-          <div class="term-top"><span class="mo"><span class="n">2</span>ヶ月</span><span class="reg">通常<span class="was">198,000円</span></span></div>
-          <div class="row c"><span class="pill off c"><b>20</b>%OFF</span><span class="how">現金払い<br>振込</span><span class="yen">158,400<small>円</small></span></div>
-          <div class="row k"><span class="pill off k"><b>15</b>%OFF</span><span class="how">カード<br>QR決済</span><span class="yen">168,300<small>円</small></span></div>
-        </div>
-        <div class="term">
-          <div class="term-top"><span class="mo"><span class="n">3</span>ヶ月</span><span class="reg">通常<span class="was">270,000円</span></span></div>
-          <div class="row c"><span class="pill off c"><b>20</b>%OFF</span><span class="how">現金払い<br>振込</span><span class="yen">216,000<small>円</small></span></div>
-          <div class="row k"><span class="pill off k"><b>15</b>%OFF</span><span class="how">カード<br>QR決済</span><span class="yen">229,500<small>円</small></span></div>
-        </div>
-      </div>
+    <div class="cmp-wrap">
+      <table class="cmp">
+        <colgroup><col class="c-term"><col class="c-reg"><col class="c-cash"><col class="c-card"></colgroup>
+        <tr><th class="blank"></th><th class="reg">通常価格</th>
+          <th class="cash"><span class="how">現金払い・振込<small>&nbsp;</small></span><span class="off"><b>20</b>%OFF</span></th>
+          <th class="card"><span class="how">クレジットカード・QR決済<small>（あとで分割OK）</small></span><span class="off"><b>15</b>%OFF</span></th></tr>
+        <tr class="grp"><td colspan="4"><span class="k">短期集中</span><span class="num">90</span>分コース</td></tr>
+        <tr><td class="term"><span class="n">2</span>ヶ月</td><td class="reg"><span class="yen">288,000<small>円</small></span></td><td class="cash"><span class="yen">230,400<small>円</small></span></td><td class="card"><span class="yen">244,800<small>円</small></span></td></tr>
+        <tr><td class="term"><span class="n">3</span>ヶ月</td><td class="reg"><span class="yen">388,000<small>円</small></span></td><td class="cash"><span class="yen">310,400<small>円</small></span></td><td class="card"><span class="yen">329,800<small>円</small></span></td></tr>
+        <tr class="grp g60"><td colspan="4"><span class="k">短期集中</span><span class="num">60</span>分コース</td></tr>
+        <tr><td class="term"><span class="n">2</span>ヶ月</td><td class="reg"><span class="yen">198,000<small>円</small></span></td><td class="cash"><span class="yen">158,400<small>円</small></span></td><td class="card"><span class="yen">168,300<small>円</small></span></td></tr>
+        <tr><td class="term"><span class="n">3</span>ヶ月</td><td class="reg"><span class="yen">270,000<small>円</small></span></td><td class="cash"><span class="yen">216,000<small>円</small></span></td><td class="card"><span class="yen">229,500<small>円</small></span></td></tr>
+      </table>
     </div>
   </section>
 
@@ -175,6 +161,7 @@
         <div class="perk-b">
           <div class="forever"><span class="pill eternal">永久</span><span class="big">1,100<small>円</small></span><span class="wari">割引<span class="taxin">（税込）</span></span></div>
           <div class="get">権利獲得</div>
+          <div class="prow hd"><span></span><span>通常</span><span></span><span>特典価格</span></div>
           <div class="prow"><span class="nm">Aコース料金</span><span class="was">12,100円</span><span class="arrow"></span><span class="yen">11,000<small>円</small></span></div>
         </div>
       </div>
@@ -182,6 +169,7 @@
         <div class="perk-h">選べるアフターフォローキャンペーン</div>
         <div class="perk-b">
           <div class="lead">短期コースが終わっても続けやすい、おトクな月額プラン！</div>
+          <div class="prow hd"><span></span><span>通常</span><span></span><span>特典価格</span></div>
           <div class="prow"><span class="nm">Aコース</span><span class="was">12,100円</span><span class="arrow"></span><span class="yen">9,790<small>円</small></span></div>
           <div class="prow"><span class="nm">Bコース</span><span class="was">24,200円</span><span class="arrow"></span><span class="yen">21,780<small>円</small></span></div>
         </div>
