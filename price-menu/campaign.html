@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>キャンペーン｜絆Style-gym Legame</title>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  :root{
+    --sage:#6f9886; --sage-dk:#4f7867; --sage-lt:#e3efe8; --sage-xl:#f3f8f5;
+    --rose:#c0708a; --rose-dk:#9c5670; --rose-lt:#f8e8ee; --rose-xl:#fdf5f8;
+    --emr:#2e9c8a; --emr-lt:#dcf1ec;
+    --ink:#38443f; --sub:#7d8a85; --line:#dde7e1;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#fff}
+  body{font-family:"Zen Maru Gothic","IPAGothic",sans-serif;color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{width:210mm;height:297mm;position:relative;overflow:hidden;padding:10mm 12mm 10mm;background:#fff}
+  .blob{position:absolute;border-radius:50%;z-index:0}
+  .blob.b1{width:120mm;height:120mm;background:var(--sage-lt);left:-45mm;top:85mm;opacity:.7}
+  .blob.b2{width:110mm;height:110mm;background:var(--rose-lt);right:-50mm;top:180mm;opacity:.8}
+  .leaf-l{position:absolute;left:-6mm;top:-4mm;width:34mm;z-index:1}
+  .leaf-r{position:absolute;right:-8mm;top:-10mm;width:40mm;z-index:1}
+  header,section,.notice{position:relative;z-index:2}
+
+  /* 背景付き文字は line-height:1 + inline-flex で上下左右中央 */
+  .pill{display:inline-flex;align-items:center;justify-content:center;line-height:1;white-space:nowrap}
+
+  .yen{font-weight:900;letter-spacing:.01em;line-height:1;white-space:nowrap}
+  .yen small{font-size:.5em;font-weight:900;margin-left:1px}
+  .was{font-size:12px;font-weight:700;color:var(--sub);text-decoration:line-through;text-decoration-color:var(--rose);text-decoration-thickness:1px;white-space:nowrap}
+  .arrow{display:inline-block;width:0;height:0;border-left:8px solid var(--rose);border-top:5px solid transparent;border-bottom:5px solid transparent;margin:0 7px;vertical-align:middle}
+
+  /* header */
+  header{text-align:center}
+  .script{font-family:"Great Vibes",cursive;font-size:32px;color:var(--sage);line-height:1}
+  h1{font-size:38px;font-weight:900;letter-spacing:.16em;margin:0 0 0 .16em;line-height:1.15}
+  .hero{display:grid;grid-template-columns:1fr 1fr;margin:6mm auto 0;width:172mm;background:var(--rose);color:#fff;border-radius:14px;box-shadow:0 3px 0 var(--rose-dk)}
+  .hero > div{display:flex;align-items:center;justify-content:center;gap:10px;padding:10px 12px}
+  .hero > div + div{border-left:1.5px solid rgba(255,255,255,.45)}
+  .hero .lbl{font-size:14px;font-weight:900;background:#fff;color:var(--rose);border-radius:999px;padding:4.5px 12px 6.5px 13px;letter-spacing:.1em}
+  .hero .was{color:rgba(255,255,255,.85);text-decoration-color:#fff;font-size:13px}
+  .hero .arrow{border-left-color:#fff}
+  .hero .cond{font-size:13px;font-weight:700;letter-spacing:.06em}
+  .hero .zero{font-size:38px;font-weight:900;line-height:1;letter-spacing:.02em}
+  .hero .zero small{font-size:16px;margin-left:2px}
+  .tax{font-size:10px;color:var(--sub);margin-top:5px;text-align:center}
+
+  /* section heading */
+  section{margin-top:10mm}
+  .sec-h{display:flex;align-items:center;gap:10px;margin-bottom:4mm}
+  .sec-h .no{font-family:"Great Vibes",cursive;color:var(--sage);font-size:28px;line-height:1}
+  .sec-h h2{font-size:22px;font-weight:900;letter-spacing:.14em}
+  .sec-h .rule{flex:1;height:2px;background:repeating-linear-gradient(90deg,var(--sage) 0 6px,transparent 6px 11px)}
+
+  /* 支払い方法の凡例 */
+  .legend{display:flex;justify-content:center;gap:4mm;margin-bottom:4mm}
+  .legend .item{display:flex;align-items:center;gap:8px;background:#fff;border-radius:999px;padding:5px 16px 5px 6px;box-shadow:0 0 0 1.5px var(--line)}
+  .legend .how{font-size:13px;font-weight:900;letter-spacing:.06em}
+  .legend .how small{font-size:10px;font-weight:700;color:var(--sub);margin-left:4px;letter-spacing:.02em}
+  .off{font-weight:900;color:#fff;border-radius:999px;font-size:12px;padding:4.5px 10px 6.5px;letter-spacing:.04em}
+  .off b{font-size:17px;margin-right:1px;letter-spacing:0}
+  .off.c{background:var(--rose-dk)}
+  .off.k{background:var(--rose)}
+
+  /* 短期集中カード（左に見出し、右に期間ごとのタイル） */
+  .plan{display:grid;grid-template-columns:36mm 1fr;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 0 0 1.5px var(--line),0 3px 0 var(--line)}
+  .plan + .plan{margin-top:4mm}
+  .plan-h{background:var(--sage);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+  .plan.p60 .plan-h{background:var(--sage-dk)}
+  .plan-h .k{font-size:12px;font-weight:700;letter-spacing:.2em;opacity:.9}
+  .plan-h .t{font-size:15px;font-weight:900;letter-spacing:.1em;margin-top:2px}
+  .plan-h .t .num{font-size:40px;letter-spacing:0;margin-right:2px;line-height:1}
+  .terms{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:8px}
+  .term{background:var(--sage-xl);border-radius:12px;padding:10px 14px 11px}
+  .term-top{display:flex;align-items:baseline;justify-content:space-between;border-bottom:1.5px dashed var(--line);padding-bottom:7px;margin-bottom:5px}
+  .term .mo{font-size:14px;font-weight:900;color:var(--sage-dk);letter-spacing:.06em}
+  .term .mo .n{font-size:24px;margin-right:1px}
+  .term .reg{font-size:10.5px;font-weight:700;color:var(--sub)}
+  .term .reg .was{margin-left:4px}
+  .row{display:flex;align-items:center;gap:8px;padding:4px 0}
+  .row .yen{margin-left:auto;font-size:23px}
+  .row.c .yen{color:var(--rose-dk)}
+  .row .how{font-size:10.5px;font-weight:700;color:var(--sub);line-height:1.3}
+
+  /* 月額コース特典 */
+  .perks{display:grid;grid-template-columns:1fr 1fr;gap:5mm}
+  .perk{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 0 0 1.5px var(--line),0 3px 0 var(--line);display:flex;flex-direction:column}
+  .perk-h{background:var(--sage);color:#fff;text-align:center;font-size:13.5px;font-weight:900;letter-spacing:.08em;padding:9.5px 8px 9.5px;line-height:1}
+  .perk.r .perk-h{background:var(--rose)}
+  .perk-b{padding:10px 14px 12px;flex:1;display:flex;flex-direction:column;justify-content:center}
+  .perk .lead{font-size:11px;font-weight:700;color:var(--rose-dk);text-align:center;margin-bottom:6px}
+  .forever{display:flex;align-items:center;justify-content:center;gap:8px}
+  .forever .eternal{background:var(--rose-dk);color:#fff;font-size:16px;font-weight:900;border-radius:999px;padding:6px 12px 7px;letter-spacing:.1em}
+  .forever .big{font-size:42px;font-weight:900;line-height:1;color:var(--ink)}
+  .forever .big small{font-size:18px;margin-left:2px}
+  .forever .big sup{font-size:9px;font-weight:700;vertical-align:top;position:relative;top:4px}
+  .forever .wari{font-size:18px;font-weight:900;letter-spacing:.06em}
+  .forever .taxin{display:block;font-size:9.5px;font-weight:700;color:var(--sub);letter-spacing:0;line-height:1}
+  .perk .get{text-align:center;font-size:12px;font-weight:900;color:var(--sage-dk);letter-spacing:.2em;margin-top:5px}
+  .prow{display:flex;align-items:center;padding:7px 2px;border-top:1.5px dashed var(--line)}
+  .prow:first-of-type{border-top:none}
+  .prow .nm{font-size:15px;font-weight:900;letter-spacing:.08em;margin-right:auto}
+  .prow .yen{font-size:24px;color:var(--rose-dk)}
+  .perk.s .prow{border-top:1.5px dashed var(--line);margin-top:8px;padding-top:9px}
+  .perk.s .prow .yen{color:var(--sage-dk)}
+
+  .notice{text-align:center;font-size:10.5px;color:var(--sub);line-height:1.7;margin-top:7mm;letter-spacing:.04em}
+  footer{position:absolute;left:0;right:0;bottom:7mm;text-align:center;font-size:13px;color:var(--sage-dk);font-weight:700;letter-spacing:.14em;z-index:2}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <img class="leaf-l" src="assets/leaf-a.png" alt="">
+  <img class="leaf-r" src="assets/leaf-b.png" alt="">
+
+  <header>
+    <div class="script">campaign</div>
+    <h1>キャンペーン</h1>
+    <div class="hero">
+      <div><span class="pill lbl">入会金</span><span class="was" >22,000円</span><span class="arrow"></span><span class="zero">0<small>円</small></span></div>
+      <div><span class="pill lbl">体験料</span><span class="cond">当日のご入会で</span><span class="zero">0<small>円</small></span></div>
+    </div>
+    <p class="tax">※表示価格は全て税込です。</p>
+  </header>
+
+  <section>
+    <div class="sec-h"><span class="no">01</span><h2>短期集中コース</h2><span class="rule"></span></div>
+
+    <div class="legend">
+      <div class="item"><span class="pill off c"><b>20</b>%OFF</span><span class="how">現金払い・振込</span></div>
+      <div class="item"><span class="pill off k"><b>15</b>%OFF</span><span class="how">クレジットカード・QR決済<small>（あとで分割OK）</small></span></div>
+    </div>
+
+    <div class="plan p90">
+      <div class="plan-h"><span class="k">短期集中</span><span class="t"><span class="num">90</span>分コース</span></div>
+      <div class="terms">
+        <div class="term">
+          <div class="term-top"><span class="mo"><span class="n">2</span>ヶ月</span><span class="reg">通常<span class="was">288,000円</span></span></div>
+          <div class="row c"><span class="pill off c"><b>20</b>%OFF</span><span class="how">現金払い<br>振込</span><span class="yen">230,400<small>円</small></span></div>
+          <div class="row k"><span class="pill off k"><b>15</b>%OFF</span><span class="how">カード<br>QR決済</span><span class="yen">244,800<small>円</small></span></div>
+        </div>
+        <div class="term">
+          <div class="term-top"><span class="mo"><span class="n">3</span>ヶ月</span><span class="reg">通常<span class="was">388,000円</span></span></div>
+          <div class="row c"><span class="pill off c"><b>20</b>%OFF</span><span class="how">現金払い<br>振込</span><span class="yen">310,400<small>円</small></span></div>
+          <div class="row k"><span class="pill off k"><b>15</b>%OFF</span><span class="how">カード<br>QR決済</span><span class="yen">329,800<small>円</small></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="plan p60">
+      <div class="plan-h"><span class="k">短期集中</span><span class="t"><span class="num">60</span>分コース</span></div>
+      <div class="terms">
+        <div class="term">
+          <div class="term-top"><span class="mo"><span class="n">2</span>ヶ月</span><span class="reg">通常<span class="was">198,000円</span></span></div>
+          <div class="row c"><span class="pill off c"><b>20</b>%OFF</span><span class="how">現金払い<br>振込</span><span class="yen">158,400<small>円</small></span></div>
+          <div class="row k"><span class="pill off k"><b>15</b>%OFF</span><span class="how">カード<br>QR決済</span><span class="yen">168,300<small>円</small></span></div>
+        </div>
+        <div class="term">
+          <div class="term-top"><span class="mo"><span class="n">3</span>ヶ月</span><span class="reg">通常<span class="was">270,000円</span></span></div>
+          <div class="row c"><span class="pill off c"><b>20</b>%OFF</span><span class="how">現金払い<br>振込</span><span class="yen">216,000<small>円</small></span></div>
+          <div class="row k"><span class="pill off k"><b>15</b>%OFF</span><span class="how">カード<br>QR決済</span><span class="yen">229,500<small>円</small></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-h"><span class="no">02</span><h2>短期コース修了後の特典</h2><span class="rule"></span></div>
+    <div class="perks">
+      <div class="perk s">
+        <div class="perk-h">短期コースより月額コースへの継続特典</div>
+        <div class="perk-b">
+          <div class="forever"><span class="pill eternal">永久</span><span class="big">1,100<small>円</small></span><span class="wari">割引<span class="taxin">（税込）</span></span></div>
+          <div class="get">権利獲得</div>
+          <div class="prow"><span class="nm">Aコース料金</span><span class="was">12,100円</span><span class="arrow"></span><span class="yen">11,000<small>円</small></span></div>
+        </div>
+      </div>
+      <div class="perk r">
+        <div class="perk-h">選べるアフターフォローキャンペーン</div>
+        <div class="perk-b">
+          <div class="lead">短期コースが終わっても続けやすい、おトクな月額プラン！</div>
+          <div class="prow"><span class="nm">Aコース</span><span class="was">12,100円</span><span class="arrow"></span><span class="yen">9,790<small>円</small></span></div>
+          <div class="prow"><span class="nm">Bコース</span><span class="was">24,200円</span><span class="arrow"></span><span class="yen">21,780<small>円</small></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <p class="notice">※キャンペーンのご利用には、所定の契約期間がございます。<br>適用条件や詳細については、別紙をご確認ください。</p>
+
+  <footer>絆Style-gym Legame</footer>
+</div>
+</body>
+</html>
