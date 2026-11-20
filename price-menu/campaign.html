@@ -118,6 +118,12 @@
   .prow.hd + .prow{border-top:1.5px dashed var(--line) !important;margin-top:0 !important}
   /* 縁：影なし・太めの枠線 */
   .cmp-wrap,.perk{box-shadow:none !important;border:2.5px solid var(--line)}
+  /* 通常価格は白、15%OFF列は20%OFF列より控えめなピンク */
+  .cmp th.reg,.cmp td.reg{background:#fff}
+  .cmp td.cash{background:#f5d6e1}
+  .cmp td.card{background:#fbebf0}
+  /* 看板の影もなし */
+  .hero{box-shadow:none}
 </style>
 </head>
 <body>
