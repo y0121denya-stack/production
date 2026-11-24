@@ -126,6 +126,14 @@
   .hero{box-shadow:none}
   /* 20%OFF列の金額は濃い文字色で読みやすく */
   .cmp td.cash .yen{color:var(--ink)}
+  /* 90分・60分を別々の表に分け、左上にコース名 */
+  .cmp-wrap + .cmp-wrap{margin-top:5mm}
+  .cmp th.course{background:var(--sage);color:#fff;padding:8px 6px}
+  .t60 .cmp th.course{background:var(--sage-dk)}
+  .cmp th.course .k{display:block;font-size:10.5px;font-weight:700;letter-spacing:.18em;opacity:.9;margin-bottom:5px}
+  .cmp th.course .t{display:block;font-size:13px;font-weight:900;letter-spacing:.06em}
+  .cmp th.course .num{font-size:28px;letter-spacing:0;margin-right:1px}
+  .cmp tr:nth-child(2) td{border-top:none}
 </style>
 </head>
 <body>
@@ -139,7 +147,7 @@
     <div class="script">campaign</div>
     <h1>キャンペーン</h1>
     <div class="hero">
-      <div><span class="pill lbl">入会金</span><span class="was" >22,000円</span><span class="arrow"></span><span class="zero">0<small>円</small></span></div>
+      <div><span class="pill lbl">入会金</span><span class="cond">全コース</span><span class="zero">0<small>円</small></span></div>
       <div><span class="pill lbl">体験料</span><span class="cond">当日のご入会で</span><span class="zero">0<small>円</small></span></div>
     </div>
     <p class="tax">※表示価格は全て税込です。</p>
@@ -147,18 +155,24 @@
 
   <section>
     <div class="sec-h"><span class="no">01</span><h2>短期集中コース</h2><span class="rule"></span></div>
-    <div class="cmp-wrap">
+    <div class="cmp-wrap t90">
       <table class="cmp">
         <colgroup><col class="c-term"><col class="c-reg"><col class="c-cash"><col class="c-card"></colgroup>
-        <tr><th class="blank"></th><th class="reg">通常価格</th>
+        <tr><th class="course"><span class="k">短期集中</span><span class="t"><span class="num">90</span>分コース</span></th><th class="reg">通常価格</th>
           <th class="cash"><span class="how">現金払い・振込<small>&nbsp;</small></span><span class="off"><b>20</b>%OFF</span></th>
           <th class="card"><span class="how">クレジットカード・QR決済<small>（あとで分割OK）</small></span><span class="off"><b>15</b>%OFF</span></th></tr>
-        <tr class="grp"><td colspan="4"><span class="k">短期集中</span><span class="num">90</span>分コース</td></tr>
-        <tr><td class="term"><span class="n">2</span>ヶ月</td><td class="reg"><span class="yen">288,000<small>円</small></span></td><td class="cash"><span class="yen">230,400<small>円</small></span></td><td class="card"><span class="yen">244,800<small>円</small></span></td></tr>
-        <tr><td class="term"><span class="n">3</span>ヶ月</td><td class="reg"><span class="yen">388,000<small>円</small></span></td><td class="cash"><span class="yen">310,400<small>円</small></span></td><td class="card"><span class="yen">329,800<small>円</small></span></td></tr>
-        <tr class="grp g60"><td colspan="4"><span class="k">短期集中</span><span class="num">60</span>分コース</td></tr>
-        <tr><td class="term"><span class="n">2</span>ヶ月</td><td class="reg"><span class="yen">198,000<small>円</small></span></td><td class="cash"><span class="yen">158,400<small>円</small></span></td><td class="card"><span class="yen">168,300<small>円</small></span></td></tr>
-        <tr><td class="term"><span class="n">3</span>ヶ月</td><td class="reg"><span class="yen">270,000<small>円</small></span></td><td class="cash"><span class="yen">216,000<small>円</small></span></td><td class="card"><span class="yen">229,500<small>円</small></span></td></tr>
+          <tr><td class="term"><span class="n">2</span>ヶ月</td><td class="reg"><span class="yen">288,000<small>円</small></span></td><td class="cash"><span class="yen">230,400<small>円</small></span></td><td class="card"><span class="yen">244,800<small>円</small></span></td></tr>
+          <tr><td class="term"><span class="n">3</span>ヶ月</td><td class="reg"><span class="yen">388,000<small>円</small></span></td><td class="cash"><span class="yen">310,400<small>円</small></span></td><td class="card"><span class="yen">329,800<small>円</small></span></td></tr>
+      </table>
+    </div>
+    <div class="cmp-wrap t60">
+      <table class="cmp">
+        <colgroup><col class="c-term"><col class="c-reg"><col class="c-cash"><col class="c-card"></colgroup>
+        <tr><th class="course"><span class="k">短期集中</span><span class="t"><span class="num">60</span>分コース</span></th><th class="reg">通常価格</th>
+          <th class="cash"><span class="how">現金払い・振込<small>&nbsp;</small></span><span class="off"><b>20</b>%OFF</span></th>
+          <th class="card"><span class="how">クレジットカード・QR決済<small>（あとで分割OK）</small></span><span class="off"><b>15</b>%OFF</span></th></tr>
+          <tr><td class="term"><span class="n">2</span>ヶ月</td><td class="reg"><span class="yen">198,000<small>円</small></span></td><td class="cash"><span class="yen">158,400<small>円</small></span></td><td class="card"><span class="yen">168,300<small>円</small></span></td></tr>
+          <tr><td class="term"><span class="n">3</span>ヶ月</td><td class="reg"><span class="yen">270,000<small>円</small></span></td><td class="cash"><span class="yen">216,000<small>円</small></span></td><td class="card"><span class="yen">229,500<small>円</small></span></td></tr>
       </table>
     </div>
   </section>
