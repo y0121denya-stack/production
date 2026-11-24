@@ -7,10 +7,10 @@
 <style>
   @page { size: A4; margin: 0; }
   :root{
-    --sage:#6f9886; --sage-dk:#4f7867; --sage-lt:#e3efe8; --sage-xl:#e1ede6;
-    --rose:#c0708a; --rose-dk:#9c5670; --rose-lt:#f8e8ee; --rose-xl:#f8e2ea;
-    --emr:#2e9c8a; --emr-lt:#dcf1ec;
-    --ink:#38443f; --sub:#7d8a85; --line:#bfd2c7;
+    --sage:#2fae84; --sage-dk:#17906a; --sage-lt:#d2f2e4; --sage-xl:#d6f1e5;
+    --rose:#f0709b; --rose-dk:#e04a7e; --rose-lt:#ffe1eb; --rose-xl:#ffd6e4;
+    --emr:#16a9c4; --emr-dk:#0f8aa1; --emr-lt:#c7eef5;
+    --ink:#2f3b36; --sub:#6c7a74; --line:#9fdcc4;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{background:#fff}
@@ -120,8 +120,8 @@
   .cmp-wrap,.perk{box-shadow:none !important;border:2.5px solid var(--line)}
   /* 通常価格は白、15%OFF列は20%OFF列より控えめなピンク */
   .cmp th.reg,.cmp td.reg{background:#fff}
-  .cmp td.cash{background:#f5d6e1}
-  .cmp td.card{background:#fbebf0}
+  .cmp td.cash{background:#ffcfe0}
+  .cmp td.card{background:#ffe8f0}
   /* 看板の影もなし */
   .hero{box-shadow:none}
   /* 20%OFF列の金額は濃い文字色で読みやすく */
@@ -134,6 +134,12 @@
   .cmp th.course .t{display:block;font-size:13px;font-weight:900;letter-spacing:.06em}
   .cmp th.course .num{font-size:28px;letter-spacing:0;margin-right:1px}
   .cmp tr:nth-child(2) td{border-top:none}
+  /* 枠線を表の色味（緑）に合わせ、通常価格のセルにも線 */
+  .cmp-wrap{border-color:var(--sage) !important}
+  .cmp th.reg{border-left:1.5px solid var(--line);border-right:1.5px solid var(--line);border-bottom:1.5px solid var(--line)}
+  .cmp td.reg{border-left:1.5px solid var(--line);border-right:1.5px solid var(--line)}
+  .cmp td.term,.cmp td.cash,.cmp td.card{border-top-color:#fff}
+  .cmp td.term{border-top:1.5px solid #fff}
 </style>
 </head>
 <body>
