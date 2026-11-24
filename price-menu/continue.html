@@ -121,6 +121,15 @@
   /* ①は文字量が少ないので幅を狭く、③を広く */
   .afs{grid-template-columns:.8fr 1fr 1.9fr}
   .af1 .tt{font-size:12.5px;white-space:nowrap}
+  /* ①②は左に縦積み（横長）、③は右 */
+  .afs{grid-template-columns:1fr 1.25fr !important}
+  .left12{display:flex;flex-direction:column;gap:3mm}
+  .af.hz{flex:1;flex-direction:row;align-items:center;gap:10px;text-align:left;padding:10px 14px}
+  .af.hz .no{flex:none}
+  .af.hz .tx{display:flex;flex-direction:column;align-items:flex-start}
+  .af.hz .tt{margin-top:0;flex:none;white-space:nowrap;font-size:14px}
+  .af.hz .tt b{font-size:16px;margin-left:6px}
+  .af.hz .cond{margin-top:5px}
 </style>
 </head>
 <body>
@@ -179,8 +188,10 @@
   <section>
     <div class="sec-h"><span class="no">03</span><h2>選べる！アフターフォローキャンペーン</h2><span class="rule"></span></div>
     <div class="afs">
-      <div class="af af1"><span class="pill no">1</span><div class="tt">キャンペーン不要<br>契約期間無し</div></div>
-      <div class="af"><span class="pill no">2</span><div class="tt"><span>パーソナルチケット<br><b>30分×2枚</b></span></div><span class="cond">契約期間あり：<br>継続月の<b>翌々月</b>から各種申請可能</span></div>
+      <div class="left12">
+        <div class="af hz"><span class="pill no">1</span><div class="tx"><div class="tt">キャンペーン不要・契約期間無し</div></div></div>
+        <div class="af hz"><span class="pill no">2</span><div class="tx"><div class="tt">パーソナルチケット<b>30分×2枚</b></div><span class="cond">契約期間あり：継続月の<b>翌々月</b>から各種申請可能</span></div></div>
+      </div>
       <div class="af af3"><span class="pill no">3</span>
         <div class="rows">
           <div class="rw"><span class="cb">A</span><div><div class="main"><span class="mk">★</span>初月<em>0円</em>＆月額会費<em>9,790円</em>（5ヶ月間）</div><span class="cond">契約期間あり：継続月の<b>12ヶ月後</b>から各種申請可能</span></div></div>
