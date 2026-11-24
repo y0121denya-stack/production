@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>月額コースキャンペーン｜絆Style-gym Legame</title>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  :root{
+    --sage:#2fae84; --sage-dk:#17906a; --sage-lt:#d2f2e4; --sage-xl:#d6f1e5;
+    --rose:#d9668c; --rose-dk:#c24874; --rose-lt:#fae1ea; --rose-xl:#fcebf1;
+    --emr:#16a9c4; --emr-dk:#0f8aa1; --emr-lt:#c7eef5;
+    --ink:#2f3b36; --sub:#6c7a74; --line:#9fdcc4; --gray:#ececec;
+    --pline:#ebb5c7; --rline:#8fd9e6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#fff}
+  body{font-family:"Zen Maru Gothic","IPAGothic",sans-serif;color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{width:210mm;height:297mm;position:relative;overflow:hidden;padding:10mm 11mm 9mm;background:#fff}
+  .blob{position:absolute;border-radius:50%;z-index:0}
+  .blob.b1{width:120mm;height:120mm;background:var(--sage-lt);left:-50mm;top:75mm;opacity:.7}
+  .blob.b2{width:110mm;height:110mm;background:var(--rose-lt);right:-55mm;top:185mm;opacity:.8}
+  .leaf-l{position:absolute;left:-6mm;top:-4mm;width:30mm;z-index:1}
+  .leaf-r{position:absolute;right:-8mm;top:-10mm;width:36mm;z-index:1}
+  header,section,.first-month{position:relative;z-index:2}
+
+  .pill{display:inline-flex;align-items:center;justify-content:center;line-height:1;white-space:nowrap}
+  .yen{font-weight:900;letter-spacing:.01em;line-height:1;white-space:nowrap}
+  .yen small{font-size:.5em;font-weight:900;margin-left:1px}
+  .was{font-size:11px;font-weight:700;color:var(--sub);text-decoration:line-through;text-decoration-color:var(--rose);text-decoration-thickness:1px;white-space:nowrap}
+
+  /* header */
+  header{text-align:center}
+  .script{font-family:"Great Vibes",cursive;font-size:30px;color:var(--sage);line-height:1}
+  .script b{font-family:"Zen Maru Gothic",sans-serif;font-size:20px;font-weight:900;color:var(--rose-dk);margin-right:8px;vertical-align:4px}
+  h1{font-size:36px;font-weight:900;letter-spacing:.16em;margin:0 0 0 .16em;line-height:1.15}
+  .hero{display:grid;grid-template-columns:1fr 1fr;margin:4mm auto 0;width:172mm;background:var(--rose);color:#fff;border-radius:14px}
+  .hero > div{display:flex;align-items:center;justify-content:center;gap:10px;padding:9px 12px}
+  .hero > div + div{border-left:1.5px solid rgba(255,255,255,.45)}
+  .hero .lbl{font-size:14px;font-weight:900;background:#fff;color:var(--rose);border-radius:999px;padding:4.5px 12px 6.5px 13px;letter-spacing:.1em}
+  .hero .cond{font-size:13px;font-weight:700;letter-spacing:.06em}
+  .hero .zero{font-size:36px;font-weight:900;line-height:1}
+  .hero .zero small{font-size:15px;margin-left:2px}
+  .tax{font-size:10px;color:var(--sub);margin-top:4px;text-align:center}
+
+  /* section heading */
+  section{margin-top:6mm}
+  .sec-h{display:flex;align-items:center;gap:9px;margin-bottom:1.5mm}
+  .sec-h .no{font-family:"Great Vibes",cursive;color:var(--sage);font-size:26px;line-height:1}
+  .sec-h h2{font-size:20px;font-weight:900;letter-spacing:.12em}
+  .sec-h h2 em{font-style:normal;color:var(--rose-dk)}
+  .sec-h .rule{flex:1;height:0;border-top:2px dashed var(--sage)}
+  .limit{display:flex;justify-content:space-between;align-items:center;margin:0 0 3mm 2px}
+  .limit .up{font-size:12px;font-weight:900;color:var(--rose-dk);letter-spacing:.1em}
+  .limit .nt{font-size:9.5px;font-weight:700;color:var(--sub)}
+
+  /* コースカード（コース概要と同じ並び） */
+  .groups{display:grid;grid-template-columns:3fr 2fr;gap:3mm;margin-bottom:2mm}
+  .glabel{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:900;letter-spacing:.12em;color:var(--sage-dk)}
+  .glabel .ln{flex:1;height:0;border-top:1.5px solid var(--line)}
+  .glabel.g2{color:var(--rose-dk)}
+  .glabel.g2 .ln{border-color:var(--pline)}
+  .courses{display:grid;grid-template-columns:repeat(5,1fr);gap:3mm}
+  .cc{position:relative;background:#fff;border:2.5px solid var(--line);border-radius:14px;text-align:center;padding:9px 5px 10px;display:flex;flex-direction:column;align-items:center}
+  .cc.p{border-color:var(--pline)}
+  .cc.r{border-color:var(--rline)}
+  .cc .badge{width:36px;height:36px;border-radius:50%;background:var(--sage);color:#fff;font-size:21px;font-weight:900;padding-bottom:1px}
+  .cc.p .badge{background:var(--rose)}
+  .cc.r .badge{background:var(--emr)}
+  .cc .nm{font-size:13px;font-weight:900;letter-spacing:.06em;margin-top:5px;line-height:1.2;white-space:nowrap}
+  .cc .what{flex:1;font-size:10.5px;font-weight:700;color:var(--sub);line-height:1.45;margin-top:4px;display:flex;flex-direction:column;justify-content:center}
+  .cc .what b{color:var(--ink);font-size:12px}
+  .price{width:100%;margin-top:7px;padding-top:7px;border-top:1.5px dashed var(--line);display:flex;flex-direction:column;align-items:center;gap:5px}
+  .cc.p .price{border-color:var(--pline)}
+  .cc.r .price{border-color:var(--rline)}
+  .price .reg{font-size:9.5px;font-weight:700;color:var(--sub)}
+  .price .reg .was{margin-left:3px}
+  .price .sp{display:flex;flex-direction:column;align-items:center;gap:4px}
+  .price .sp .lb{font-size:9.5px;font-weight:900;color:#fff;background:var(--rose-dk);border-radius:999px;padding:3.5px 9px}
+  .price .sp .yen{font-size:24px;color:var(--rose-dk)}
+  .price .none{font-size:13px;font-weight:900;color:var(--sub);padding:14px 0 8px}
+  .same{position:absolute;top:-11px;left:50%;transform:translateX(-50%);font-size:9px;font-weight:900;color:#fff;background:var(--rose-dk);border-radius:999px;padding:4px 8px 3px 9px;box-shadow:0 0 0 2.5px #fff}
+
+  /* 初月0円 */
+  .first-month{margin-top:6mm;text-align:center}
+  .first-month .more{font-size:13px;font-weight:900;color:var(--rose-dk);letter-spacing:.14em}
+  .first-month .lead{font-size:15px;font-weight:900;letter-spacing:.1em;margin-top:2px}
+  .first-month .lead em{font-style:normal;color:var(--rose-dk);font-size:19px}
+  .fm-box{display:inline-flex;align-items:center;gap:16px;margin-top:3mm;background:var(--rose);color:#fff;border-radius:16px;padding:10px 32px 12px}
+  .fm-box .all{font-size:15px;font-weight:900;background:#fff;color:var(--rose);border-radius:999px;padding:5px 14px 7px 15px;letter-spacing:.1em}
+  .fm-box .txt{font-size:26px;font-weight:900;letter-spacing:.12em;line-height:1}
+  .fm-box .zero{font-size:46px;font-weight:900;line-height:1;margin-left:4px}
+  .fm-box .zero small{font-size:20px;margin-left:2px}
+
+  /* 期間の表 */
+  .tbl-wrap{border-radius:14px;overflow:hidden;border:4px solid #fff}
+  table.per{width:100%;border-collapse:separate;border-spacing:0;font-variant-numeric:tabular-nums}
+  .per th,.per td{border-top:1.5px solid #fff;border-left:1.5px solid #fff;vertical-align:middle;text-align:center;line-height:1.3}
+  .per tr:first-child th{border-top:none}
+  .per th:first-child,.per td:first-child{border-left:none}
+  .per thead th{background:var(--gray);font-size:11.5px;font-weight:900;color:var(--ink);padding:8px 6px;letter-spacing:.06em}
+  .per thead th.hl{background:var(--rose-dk);color:#fff}
+  .per td{background:#f6f6f6;font-size:14px;font-weight:900;padding:8px 6px}
+  .per td.c{background:var(--sage-xl);width:24%}
+  .per td.c .bd{display:inline-flex;gap:3px;justify-content:center}
+  .per td.c .b{display:inline-flex;align-items:center;justify-content:center;line-height:1;width:24px;height:24px;border-radius:50%;color:#fff;font-size:13px;font-weight:900;padding-bottom:1px}
+  .per .b.s{background:var(--sage)} .per .b.p{background:var(--rose)} .per .b.r{background:var(--emr)}
+  .per td.fee{width:16%;font-size:12.5px}
+  .per td.fee .fz{display:inline-flex;align-items:center;justify-content:center;line-height:1;border-radius:999px;padding:4px 10px 5px;font-size:11.5px;color:#fff;background:var(--sage-dk)}
+  .per td.fee .fz.half{background:var(--emr-dk)}
+  .per td.sp{background:var(--rose-xl);color:var(--rose-dk);width:30%}
+  .per td.na{color:var(--sub);font-size:12px;font-weight:700}
+  .per td small{font-size:10.5px;font-weight:700;margin-left:1px}
+
+  footer{position:absolute;left:0;right:0;bottom:5mm;text-align:center;font-size:12px;color:var(--sage-dk);font-weight:700;letter-spacing:.14em;z-index:2}
+  /* 調整：価格欄の高さをそろえる・余白を広げる・中央そろえ微調整 */
+  .price{min-height:92px;justify-content:center}
+  .cc{padding:12px 5px 12px}
+  section{margin-top:9mm}
+  .first-month{margin-top:9mm}
+  .per td{padding:11px 6px}
+  .fm-box .all{padding:5.5px 14px 6.5px 15px}
+  .per td.fee .fz{padding:4.5px 10px 4.5px}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <img class="leaf-l" src="assets/leaf-a.png" alt="">
+  <img class="leaf-r" src="assets/leaf-b.png" alt="">
+
+  <header>
+    <div class="script"><b>11月</b>campaign</div>
+    <h1>キャンペーン</h1>
+    <div class="hero">
+      <div><span class="pill lbl">入会金</span><span class="cond">全コース</span><span class="zero">0<small>円</small></span></div>
+      <div><span class="pill lbl">体験料</span><span class="cond">当日のご入会で</span><span class="zero">0<small>円</small></span></div>
+    </div>
+    <p class="tax">※表示価格は全て税込です。</p>
+  </header>
+
+  <section>
+    <div class="sec-h"><span class="no">01</span><h2>空き枠がある場合のみの<em>特別価格</em></h2><span class="rule"></span></div>
+    <div class="limit"><span class="up">＼ 会員数上限まで ／</span><span class="nt">※会員数が上限に達し次第、通常価格となります。</span></div>
+    <div class="groups">
+      <div class="glabel"><span class="ln"></span>パーソナルコース<span class="ln"></span></div>
+      <div class="glabel g2"><span class="ln"></span>グループレッスン<span class="ln"></span></div>
+    </div>
+    <div class="courses">
+      <div class="cc"><span class="pill badge">A</span><div class="nm">Aコース</div><div class="what">パーソナル<br>トレーニング<b>30分×月2回</b></div>
+        <div class="price"><span class="reg">通常<span class="was">12,100円</span></span><span class="sp"><span class="pill lb">特別価格</span><span class="yen">9,790<small>円</small></span></span></div></div>
+      <div class="cc"><span class="pill badge">B</span><div class="nm">Bコース</div><div class="what">パーソナル<br>トレーニング<b>30分×月5回</b></div>
+        <div class="price"><span class="reg">通常<span class="was">24,200円</span></span><span class="sp"><span class="pill lb">特別価格</span><span class="yen">21,780<small>円</small></span></span></div></div>
+      <div class="cc"><span class="pill badge">C</span><div class="nm">Cコース</div><div class="what">パーソナル<br>トレーニング<b>30分×月9回</b></div>
+        <div class="price"><span class="none">特別価格なし</span></div></div>
+      <div class="cc p"><span class="pill badge">P</span><div class="nm">ピラティスコース</div><div class="what">グループピラティス<br>レッスン<b>50分×月2回</b></div>
+        <div class="price"><span class="reg">通常<span class="was">12,100円</span></span><span class="sp"><span class="pill lb">特別価格</span><span class="yen">9,790<small>円</small></span></span></div></div>
+      <div class="cc r"><span class="pill badge">R</span><div class="nm">ランニングコース</div><div class="what">ランニング指導<b>30分×月1回</b>ランニング<b>60分×月2回</b></div>
+        <div class="price"><span class="reg">通常<span class="was">12,100円</span></span><span class="sp"><span class="pill lb">特別価格</span><span class="yen">9,790<small>円</small></span></span></div></div>
+    </div>
+  </section>
+
+  <div class="first-month">
+    <div class="more">＼ さらに ／</div>
+    <div class="lead">続けられるか不安な方のために<em>始めやすさ</em>を最優先</div>
+    <div class="fm-box"><span class="pill all">全コース</span><span class="txt">初月分会費</span><span class="zero">0<small>円</small></span></div>
+  </div>
+
+  <section>
+    <div class="sec-h"><span class="no">02</span><h2>特別価格の適用期間</h2><span class="rule"></span></div>
+    <div class="tbl-wrap">
+      <table class="per">
+        <thead><tr><th>コース</th><th>入会金</th><th class="hl">特別価格適用期間</th><th>コース変更・休会・退会<br>申請可能開始日</th></tr></thead>
+        <tr><td class="c" rowspan="2"><span class="bd"><span class="b s">A</span><span class="b p">P</span><span class="b r">R</span></span></td><td class="fee"><span class="fz">入会金無料</span></td><td class="sp">2027年4月<small>分会費まで</small></td><td>2027年11月1日</td></tr>
+        <tr><td class="fee"><span class="fz half">入会金半額</span></td><td class="sp">2027年1月<small>分会費まで</small></td><td>2027年5月1日</td></tr>
+        <tr><td class="c"><span class="bd"><span class="b s">B</span></span></td><td class="fee"><span class="fz">入会金無料</span></td><td class="sp">2027年2月<small>分会費まで</small></td><td>2027年6月1日</td></tr>
+        <tr><td class="c"><span class="bd"><span class="b s">C</span></span></td><td class="fee"><span class="fz">入会金無料</span></td><td class="sp na">特別価格なし</td><td>2027年3月1日</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <footer>絆Style-gym Legame</footer>
+</div>
+</body>
+</html>
