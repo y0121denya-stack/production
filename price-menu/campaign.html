@@ -140,6 +140,20 @@
   .cmp td.reg{border-left:1.5px solid var(--line);border-right:1.5px solid var(--line)}
   .cmp td.term,.cmp td.cash,.cmp td.card{border-top-color:#fff}
   .cmp td.term{border-top:1.5px solid #fff}
+  /* キャンペーン期間 */
+  .period{display:inline-flex;align-items:center;gap:10px;margin-top:3mm}
+  .period .pl{background:var(--sage);color:#fff;font-size:13px;font-weight:900;border-radius:999px;padding:4.5px 12px 6.5px 13px;letter-spacing:.12em}
+  .period .dt{font-size:15px;font-weight:900;color:var(--sage-dk);letter-spacing:.08em}
+  .period .dt b{font-size:22px;letter-spacing:.02em;margin:0 1px}
+  .hero{margin-top:4mm}
+  /* 比較表の外枠：左2列は緑、右2列はピンク、境目はグラデーション */
+  .cmp-wrap{border:2.5px solid transparent !important;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(90deg,var(--sage) 0%,var(--sage) 35%,var(--rose) 45%,var(--rose) 100%) border-box}
+  /* アフターフォローのカードの枠はピンク */
+  .perk.r{border-color:var(--rose) !important}
+  /* 期間追加に合わせて縦の余白を詰める */
+  section{margin-top:7mm}
+  .notice{margin-top:4mm !important}
+  .cmp-wrap + .cmp-wrap{margin-top:4mm}
 </style>
 </head>
 <body>
@@ -152,6 +166,7 @@
   <header>
     <div class="script">campaign</div>
     <h1>キャンペーン</h1>
+    <div class="period"><span class="pill pl">期間</span><span class="dt"><b>2026</b>年<b>12</b>月<b>26</b>日まで</span></div>
     <div class="hero">
       <div><span class="pill lbl">入会金</span><span class="cond">全コース</span><span class="zero">0<small>円</small></span></div>
       <div><span class="pill lbl">体験料</span><span class="cond">当日のご入会で</span><span class="zero">0<small>円</small></span></div>
