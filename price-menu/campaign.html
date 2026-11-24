@@ -154,6 +154,13 @@
   section{margin-top:7mm}
   .notice{margin-top:4mm !important}
   .cmp-wrap + .cmp-wrap{margin-top:4mm}
+  /* セル内の線はすべて白。20%OFF列の縁取りは外して二重線を解消 */
+  .cmp td.cash,.cmp th.cash,.cmp tr:last-child td.cash{box-shadow:none !important}
+  .cmp th,.cmp td{border-top:1.5px solid #fff !important;border-left:1.5px solid #fff !important;border-right:none !important;border-bottom:none !important}
+  .cmp tr:first-child th{border-top:none !important}
+  .cmp th:first-child,.cmp td:first-child{border-left:none !important}
+  /* 通常価格：薄いグレー背景・黒文字 */
+  .cmp th.reg,.cmp td.reg{background:#ececec !important;color:var(--ink) !important}
 </style>
 </head>
 <body>
