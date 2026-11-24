@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>ジム利用マナーのお願い</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  :root { --green: #1f7a4a; --green-light: #e8f3ec; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #fff; }
+  body {
+    font-family: "Zen Maru Gothic", "IPAGothic", sans-serif;
+    font-weight: 500;
+    color: var(--green);
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .page {
+    width: 210mm; height: 297mm;
+    padding: 16mm 16mm 14mm;
+    display: flex; flex-direction: column;
+  }
+  .frame {
+    flex: 1;
+    border: 1.2mm solid var(--green);
+    border-radius: 6mm;
+    padding: 14mm 13mm 11mm;
+    display: flex; flex-direction: column;
+  }
+  .eyebrow {
+    text-align: center; font-size: 12pt; letter-spacing: 0.35em;
+  }
+  h1 {
+    text-align: center; font-size: 38pt; font-weight: 900;
+    letter-spacing: 0.06em; margin-top: 3mm;
+  }
+  .lead {
+    text-align: center; font-size: 12.5pt; line-height: 1.8;
+    margin-top: 6mm; padding-bottom: 8mm;
+    border-bottom: 0.4mm solid var(--green);
+  }
+  .items { flex: 1; display: flex; flex-direction: column; justify-content: space-evenly; }
+  .item { display: flex; gap: 7mm; align-items: flex-start; }
+  .num {
+    flex: 0 0 17mm; height: 17mm; border-radius: 50%;
+    border: 0.8mm solid var(--green);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24pt; font-weight: 700; line-height: 1;
+  }
+  .item > div:last-child { flex: 1; }
+  .item h2 {
+    font-size: 21pt; font-weight: 700; line-height: 1.35;
+    padding-bottom: 2mm; margin-bottom: 3mm;
+    border-bottom: 0.3mm dashed var(--green);
+  }
+  .item p { font-size: 14pt; line-height: 1.85; }
+  strong { font-weight: 900; background: linear-gradient(transparent 62%, var(--green-light) 62%); }
+  .footer {
+    text-align: center; padding-top: 7mm;
+    border-top: 0.4mm solid var(--green);
+  }
+  .footer .thanks { font-size: 13pt; line-height: 1.7; }
+  .footer .shop { font-size: 15pt; font-weight: 700; letter-spacing: 0.08em; margin-top: 3mm; }
+</style>
+</head>
+<body>
+<div class="page"><div class="frame">
+  <div class="eyebrow">GYM MANNER</div>
+  <h1>ご利用マナーのお願い</h1>
+  <p class="lead">みなさまに気持ちよくトレーニングしていただくため、<br>以下のご協力をお願いいたします。</p>
+
+  <div class="items">
+    <div class="item">
+      <div class="num">1</div>
+      <div>
+        <h2>器具・マシンの音について</h2>
+        <p>ダンベル・バーベル・マシンなどの重りは、<br><strong>ゆっくり丁寧に戻して</strong>ください。<br>大きな音は他のお客様のご迷惑となりますので、<br>ご配慮をお願いいたします。</p>
+      </div>
+    </div>
+    <div class="item">
+      <div class="num">2</div>
+      <div>
+        <h2>マシンの利用時間について</h2>
+        <p>同じマシンの連続利用は<br><strong>30分まで</strong>とさせていただきます。<br>他のお客様と譲り合ってご利用ください。</p>
+      </div>
+    </div>
+    <div class="item">
+      <div class="num">3</div>
+      <div>
+        <h2>マシンの重りのピンについて</h2>
+        <p>ご利用後は、<strong>ピンを一番上に戻して</strong>ください。<br>次のお客様がスムーズにご利用いただけるよう、<br>ご協力をお願いいたします。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p class="thanks">ご理解・ご協力のほど、よろしくお願いいたします。</p>
+    <p class="shop">絆Style-gym Legame</p>
+  </div>
+</div></div>
+</body>
+</html>
