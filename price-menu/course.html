@@ -130,6 +130,21 @@
   .tb-b{justify-content:space-evenly;align-items:stretch}
   .slot{justify-content:center}
   .tb .foot{text-align:center;margin-top:0;padding-top:6px}
+  /* オプション：2列のメニューリスト。項目名→点線→金額で目線を誘導 */
+  .opts{display:grid;grid-template-columns:1fr 1fr;gap:3mm}
+  .ocard{background:#fff;border:2.5px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+  .oh{background:var(--sage);color:#fff;font-size:13px;font-weight:900;letter-spacing:.14em;text-align:center;padding:6px 4px 7px;line-height:1}
+  .ob{padding:3px 12px 5px;flex:1;display:flex;flex-direction:column;justify-content:space-evenly}
+  .orow{display:flex;align-items:center;gap:6px;padding:8px 0}
+  .orow + .orow{border-top:1.5px dashed var(--line)}
+  .onm{display:flex;align-items:center;gap:6px;min-width:0}
+  .ot{font-size:12px;font-weight:900;line-height:1.25;letter-spacing:.02em}
+  .osub{display:block;font-size:8.5px;font-weight:700;color:var(--sub);letter-spacing:0;margin-top:1px}
+  .dots{flex:1;min-width:10px;height:0;border-top:2px dotted #b9c6c0;align-self:center}
+  .op{font-size:11px;font-weight:900;white-space:nowrap}
+  .op .yen{font-size:17px}
+  .orow .tag{flex:none;display:inline-flex;align-items:center;justify-content:center;line-height:1;font-size:9px;font-weight:900;color:#fff;border-radius:999px;padding:3.5px 7px;width:64px}
+  .orow .tag.ps{background:var(--sage-dk)} .orow .tag.pl{background:var(--rose)} .orow .tag.rn{background:var(--emr)}
 </style>
 </head>
 <body>
@@ -170,7 +185,7 @@
     <div class="sec-h"><span class="no">02</span><h2>ご予約可能時間</h2><span class="rule"></span></div>
     <div class="times">
       <div class="tb">
-        <div class="tb-h">パーソナル・施設</div>
+        <div class="tb-h">パーソナル・施設の利用可能時間</div>
         <div class="tb-b">
           <div class="slot"><span class="pill day">平日・土曜</span><span class="hrs">10:00〜21:15</span></div>
           <div class="slot"><span class="pill day">日曜・祝日</span><span class="hrs">10:00〜17:15</span></div>
@@ -198,17 +213,26 @@
 
   <section>
     <div class="sec-h"><span class="no">03</span><h2>オプション</h2><span class="rule"></span></div>
-    <div class="opt-wrap">
-      <table class="opt">
-        <tr><th rowspan="4">追加チケット</th><td><span class="tag ps">パーソナル</span>パーソナル（指名料込み）30分</td><td class="price"><span class="yen">4,400<small>円</small></span></td></tr>
-        <tr><td><span class="tag pl">ピラティス</span>ピラティスグループレッスン 50分</td><td class="price"><span class="yen">4,400<small>円</small></span></td></tr>
-        <tr><td><span class="tag rn">ランニング</span>グループランニング指導 30分</td><td class="price"><span class="yen">4,400<small>円</small></span></td></tr>
-        <tr><td><span class="tag rn">ランニング</span>グループランニング 60分</td><td class="price"><span class="yen">2,200<small>円</small></span></td></tr>
-        <tr><th>指名料</th><td>1セッション <small>（30分でも60分でも同金額）</small></td><td class="price"><span class="yen">550<small>円</small></span></td></tr>
-        <tr><th>手ぶらセット</th><td>ウェア上下・シューズ・フェイスタオル・バスタオル</td><td class="price"><span class="yen">2,750<small>円</small></span>/月</td></tr>
-        <tr><th>タオルセット</th><td>フェイスタオル・バスタオル</td><td class="price"><span class="yen">1,100<small>円</small></span>/月</td></tr>
-        <tr><th>契約ロッカー</th><td>更衣室 or カウンター前</td><td class="price"><small class="sz">大</small><span class="yen">1,100<small>円</small></span>/月<br><small class="sz">小・カウンター</small><span class="yen">550<small>円</small></span>/月</td></tr>
-      </table>
+    <div class="opts">
+      <div class="ocard">
+        <div class="oh">追加チケット</div>
+        <div class="ob">
+          <div class="orow"><span class="onm"><span class="tag ps">パーソナル</span><span class="ot">パーソナル 30分<span class="osub">指名料込み</span></span></span><span class="dots"></span><span class="op"><span class="yen">4,400<small>円</small></span></span></div>
+          <div class="orow"><span class="onm"><span class="tag pl">ピラティス</span><span class="ot">グループレッスン 50分<span class="osub">ピラティスグループレッスン</span></span></span><span class="dots"></span><span class="op"><span class="yen">4,400<small>円</small></span></span></div>
+          <div class="orow"><span class="onm"><span class="tag rn">ランニング</span><span class="ot">グループランニング指導 30分</span></span><span class="dots"></span><span class="op"><span class="yen">4,400<small>円</small></span></span></div>
+          <div class="orow"><span class="onm"><span class="tag rn">ランニング</span><span class="ot">グループランニング 60分</span></span><span class="dots"></span><span class="op"><span class="yen">2,200<small>円</small></span></span></div>
+        </div>
+      </div>
+      <div class="ocard">
+        <div class="oh">その他オプション</div>
+        <div class="ob">
+          <div class="orow"><span class="onm"><span class="ot">指名料<span class="osub">1セッション（30分でも60分でも同金額）</span></span></span><span class="dots"></span><span class="op"><span class="yen">550<small>円</small></span></span></div>
+          <div class="orow"><span class="onm"><span class="ot">手ぶらセット<span class="osub">ウェア上下・シューズ・フェイスタオル・バスタオル</span></span></span><span class="dots"></span><span class="op"><span class="yen">2,750<small>円</small></span>/月</span></div>
+          <div class="orow"><span class="onm"><span class="ot">タオルセット<span class="osub">フェイスタオル・バスタオル</span></span></span><span class="dots"></span><span class="op"><span class="yen">1,100<small>円</small></span>/月</span></div>
+          <div class="orow"><span class="onm"><span class="ot">契約ロッカー（大）<span class="osub">更衣室 or カウンター前</span></span></span><span class="dots"></span><span class="op"><span class="yen">1,100<small>円</small></span>/月</span></div>
+          <div class="orow"><span class="onm"><span class="ot">契約ロッカー（小・カウンター）</span></span><span class="dots"></span><span class="op"><span class="yen">550<small>円</small></span>/月</span></div>
+        </div>
+      </div>
     </div>
   </section>
 
