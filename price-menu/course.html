@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>コース概要｜絆Style-gym Legame</title>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  :root{
+    --sage:#2fae84; --sage-dk:#17906a; --sage-lt:#d2f2e4; --sage-xl:#d6f1e5;
+    --rose:#d9668c; --rose-dk:#c24874; --rose-lt:#fae1ea; --rose-xl:#fcebf1;
+    --emr:#16a9c4; --emr-dk:#0f8aa1; --emr-lt:#c7eef5; --emr-xl:#e3f6fa;
+    --ink:#2f3b36; --sub:#6c7a74; --line:#9fdcc4; --gray:#ececec;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#fff}
+  body{font-family:"Zen Maru Gothic","IPAGothic",sans-serif;color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{width:210mm;height:297mm;position:relative;overflow:hidden;padding:9mm 11mm 9mm;background:#fff}
+  .blob{position:absolute;border-radius:50%;z-index:0}
+  .blob.b1{width:120mm;height:120mm;background:var(--sage-lt);left:-50mm;top:70mm;opacity:.7}
+  .blob.b2{width:110mm;height:110mm;background:var(--rose-lt);right:-55mm;top:190mm;opacity:.8}
+  .leaf-l{position:absolute;left:-6mm;top:-4mm;width:30mm;z-index:1}
+  .leaf-r{position:absolute;right:-8mm;top:-10mm;width:36mm;z-index:1}
+  header,section,.note1{position:relative;z-index:2}
+
+  .pill{display:inline-flex;align-items:center;justify-content:center;line-height:1;white-space:nowrap}
+  .yen{font-weight:900;letter-spacing:.01em;line-height:1;white-space:nowrap}
+  .yen small{font-size:.5em;font-weight:900;margin-left:1px}
+
+  /* header */
+  header{text-align:center}
+  .script{font-family:"Great Vibes",cursive;font-size:28px;color:var(--sage);line-height:1}
+  h1{font-size:34px;font-weight:900;letter-spacing:.24em;margin:0 0 0 .24em;line-height:1.15}
+  .free{display:inline-flex;align-items:center;gap:10px;margin:3mm auto 0;background:var(--rose);color:#fff;border-radius:12px;padding:7px 24px 8px 18px}
+  .free .all{font-size:12px;font-weight:900;background:#fff;color:var(--rose);border-radius:999px;padding:4px 10px 5px 11px;letter-spacing:.1em}
+  .free .txt{font-size:18px;font-weight:900;letter-spacing:.12em;line-height:1}
+  .free .txt b{font-size:26px;letter-spacing:.08em}
+  .fees{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-top:3.5mm}
+  .fee{background:var(--sage);color:#fff;border-radius:14px;padding:8px 10px 9px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .fee .row1{display:flex;align-items:baseline;gap:10px;font-size:15px;font-weight:900;letter-spacing:.14em;line-height:1}
+  .fee .row1 b{font-size:22px;letter-spacing:.04em}
+  .fee .row1 b small{font-size:13px;margin-left:1px}
+  .fee .sub{font-size:9px;font-weight:700;letter-spacing:.02em;margin-top:5px;opacity:.95;line-height:1}
+  .tax{font-size:9.5px;color:var(--sub);text-align:right;margin-top:3px}
+
+  /* section heading */
+  section{margin-top:4.5mm}
+  .sec-h{display:flex;align-items:center;gap:9px;margin-bottom:2.5mm}
+  .sec-h .no{font-family:"Great Vibes",cursive;color:var(--sage);font-size:24px;line-height:1}
+  .sec-h h2{font-size:19px;font-weight:900;letter-spacing:.14em}
+  .sec-h .rule{flex:1;height:0;border-top:2px dashed var(--sage)}
+
+  /* 01 コース */
+  .groups{display:grid;grid-template-columns:3fr 2fr;gap:3mm;margin-bottom:2mm}
+  .glabel{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:900;letter-spacing:.12em;color:var(--sage-dk)}
+  .glabel .ln{flex:1;height:0;border-top:1.5px solid var(--line)}
+  .glabel.g2{color:var(--rose-dk)}
+  .glabel.g2 .ln{border-color:#ebb5c7}
+  .glabel sup{font-size:8px;margin-left:1px}
+  .courses{display:grid;grid-template-columns:repeat(5,1fr);gap:3mm}
+  .cc{background:#fff;border:2.5px solid var(--line);border-radius:14px;text-align:center;padding:9px 6px 10px;display:flex;flex-direction:column;align-items:center}
+  .cc.p{border-color:#ebb5c7}
+  .cc.r{border-color:#8fd9e6}
+  .cc .badge{width:40px;height:40px;border-radius:50%;background:var(--sage);color:#fff;font-size:23px;font-weight:900;padding-bottom:2px}
+  .cc.p .badge{background:var(--rose)}
+  .cc.r .badge{background:var(--emr)}
+  .cc .nm{font-size:13.5px;font-weight:900;letter-spacing:.06em;margin-top:5px;line-height:1.2}
+  .cc .what{font-size:10.5px;font-weight:700;color:var(--sub);line-height:1.45;margin-top:4px;min-height:46px;display:flex;flex-direction:column;justify-content:center}
+  .cc .what b{color:var(--ink);font-size:12px}
+  .cc .yen{font-size:22px;margin-top:6px;padding-top:7px;border-top:1.5px dashed var(--line);width:100%}
+  .cc.p .yen{border-color:#ebb5c7}
+  .cc.r .yen{border-color:#8fd9e6}
+  .cc .first{font-size:9.5px;font-weight:900;color:#fff;background:var(--emr);border-radius:999px;padding:3px 8px 4px;margin-top:5px;letter-spacing:.06em}
+  .note1{font-size:8.3px;color:var(--sub);line-height:1.55;margin-top:2mm;padding-left:2.2em;text-indent:-2.2em}
+
+  /* 02 予約可能時間 */
+  .times{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3mm}
+  .tb{background:#fff;border:2.5px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+  .tb.p{border-color:#ebb5c7}
+  .tb.r{border-color:#8fd9e6}
+  .tb-h{background:var(--sage);color:#fff;font-size:12.5px;font-weight:900;letter-spacing:.1em;text-align:center;padding:6px 4px 7px;line-height:1}
+  .tb.p .tb-h{background:var(--rose)}
+  .tb.r .tb-h{background:var(--emr)}
+  .tb-b{padding:6px 10px 7px;flex:1;display:flex;flex-direction:column}
+  .slot{display:flex;align-items:center;gap:8px;padding:5px 0}
+  .slot + .slot{border-top:1.5px dashed var(--line)}
+  .tb.p .slot + .slot{border-color:#ebb5c7}
+  .tb.r .slot + .slot{border-color:#8fd9e6}
+  .day{flex:none;width:48px;font-size:10.5px;font-weight:900;color:#fff;background:var(--sage-dk);border-radius:999px;padding:4px 0 5px;letter-spacing:.04em}
+  .tb.p .day{background:var(--rose-dk)}
+  .tb.r .day{background:var(--emr-dk)}
+  .hrs{font-size:14px;font-weight:900;line-height:1.35;font-variant-numeric:tabular-nums}
+  .hrs .lb{font-size:9.5px;font-weight:700;color:var(--sub);margin-right:4px}
+  .tb .foot{font-size:8.5px;font-weight:700;color:var(--sub);line-height:1.45;margin-top:auto;padding-top:4px}
+
+  /* 03 オプション */
+  .opt-wrap{border-radius:14px;overflow:hidden}
+  table.opt{width:100%;border-collapse:separate;border-spacing:0}
+  .opt th,.opt td{border-top:1.5px solid #fff;border-left:1.5px solid #fff;vertical-align:middle}
+  .opt tr:first-child th,.opt tr:first-child td{border-top:none}
+  .opt th:first-child{border-left:none}
+  .opt th{background:var(--sage);color:#fff;font-size:13px;font-weight:900;letter-spacing:.12em;width:23%;text-align:center;padding:5px 6px}
+  .opt td{background:var(--gray);font-size:11.5px;font-weight:700;padding:5px 12px;line-height:1.35}
+  .opt td.price{background:var(--sage-xl);text-align:right;width:27%;font-size:13.5px;font-weight:900;white-space:nowrap}
+  .opt td.price .yen{font-size:16px}
+  .opt td small{font-size:9px;color:var(--sub);font-weight:700}
+  .opt .tag{display:inline-flex;align-items:center;justify-content:center;line-height:1;font-size:9.5px;font-weight:900;color:#fff;border-radius:999px;padding:3px 7px 4px;margin-right:6px;vertical-align:1px}
+  .opt .tag.ps{background:var(--sage-dk)} .opt .tag.pl{background:var(--rose)} .opt .tag.rn{background:var(--emr)}
+
+  footer{position:absolute;left:0;right:0;bottom:4.5mm;text-align:center;font-size:12px;color:var(--sage-dk);font-weight:700;letter-spacing:.14em;z-index:2}
+  .opt td.price .sz{font-size:10px;color:var(--sub);margin-right:5px}
+  /* 調整：曜日ラベル幅、価格の高さをそろえる、縦幅を詰める */
+  .day{width:auto;padding:4px 9px 5px}
+  .cc{padding:8px 5px 9px}
+  .cc .nm{white-space:nowrap;font-size:13px}
+  .cc .nm .k1{font-size:8px;vertical-align:top;margin-left:1px}
+  .cc .what{flex:1;min-height:0;margin-bottom:0}
+  .cc .badge{width:36px;height:36px;font-size:21px}
+  .opt th{padding:4px 6px}
+  .opt td{padding:4px 12px}
+  .tb-b{padding:4px 10px 6px}
+  section{margin-top:4mm}
+  footer{bottom:3.5mm}
+  .cc .first{padding:4px 7px 3px 9px}
+  .day{padding:5px 9px 4px}
+  .opt .tag{padding:3.5px 7px 3.5px}
+  .cc{position:relative}
+  .cc.r .first{position:absolute;top:-11px;left:50%;transform:translateX(-50%);margin-top:0;box-shadow:0 0 0 2.5px #fff}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <img class="leaf-l" src="assets/leaf-a.png" alt="">
+  <img class="leaf-r" src="assets/leaf-b.png" alt="">
+
+  <header>
+    <div class="script">price menu</div>
+    <h1>コース概要</h1>
+    <div class="free"><span class="pill all">全コース</span><span class="txt">ジム施設 <b>通い放題</b></span></div>
+    <div class="fees">
+      <div class="fee"><div class="row1">入会金<b>22,000<small>円</small></b></div></div>
+      <div class="fee"><div class="row1">年会費<b>11,000<small>円</small></b></div><div class="sub">初回は初回請求時・次年度以降はご入会月の月額会費と合算のご請求</div></div>
+    </div>
+    <p class="tax">※表示価格は全て税込です。</p>
+  </header>
+
+  <section>
+    <div class="sec-h"><span class="no">01</span><h2>月額コース</h2><span class="rule"></span></div>
+    <div class="groups">
+      <div class="glabel"><span class="ln"></span>パーソナルコース<span class="ln"></span></div>
+      <div class="glabel g2"><span class="ln"></span>グループレッスン<span class="ln"></span></div>
+    </div>
+    <div class="courses">
+      <div class="cc"><span class="pill badge">A</span><div class="nm">Aコース</div><div class="what">パーソナル<br>トレーニング<b>30分×月2回</b></div><span class="yen">12,100<small>円</small></span></div>
+      <div class="cc"><span class="pill badge">B</span><div class="nm">Bコース</div><div class="what">パーソナル<br>トレーニング<b>30分×月5回</b></div><span class="yen">24,200<small>円</small></span></div>
+      <div class="cc"><span class="pill badge">C</span><div class="nm">Cコース</div><div class="what">パーソナル<br>トレーニング<b>30分×月9回</b></div><span class="yen">38,900<small>円</small></span></div>
+      <div class="cc p"><span class="pill badge">P</span><div class="nm">ピラティスコース<span class="k1">※1</span></div><div class="what">グループピラティス<br>レッスン<b>50分×月2回</b></div><span class="yen">12,100<small>円</small></span></div>
+      <div class="cc r"><span class="pill badge">R</span><div class="nm">ランニングコース</div><div class="what">ランニング指導<b>30分×月1回</b>ランニング<b>60分×月2回</b></div><span class="yen">12,100<small>円</small></span><span class="pill first">先着20名</span></div>
+    </div>
+    <p class="note1">※1　ピラティスコースは外部講師によるレッスン提供のため、講師の退任やその他やむを得ない事情により、コースの継続が難しくなる場合がございます。その際は、コース終了日の2ヶ月前までに会員様へご案内いたします。また、当該コースをご契約中の会員様につきましては、終了日以降、自動的に当施設のAコースへ移行となります。なお、当施設が定める所定の契約期間中（第13条第2項および第34条）については、コース終了を理由とした退会はできかねますので、あらかじめご了承ください。</p>
+  </section>
+
+  <section>
+    <div class="sec-h"><span class="no">02</span><h2>ご予約可能時間</h2><span class="rule"></span></div>
+    <div class="times">
+      <div class="tb">
+        <div class="tb-h">パーソナル・施設</div>
+        <div class="tb-b">
+          <div class="slot"><span class="pill day">平日・土曜</span><span class="hrs">10:00〜21:15</span></div>
+          <div class="slot"><span class="pill day">日曜・祝日</span><span class="hrs">10:00〜17:15</span></div>
+          <p class="foot">施設通い放題のご利用も、上記時間内でのご案内となります。</p>
+        </div>
+      </div>
+      <div class="tb p">
+        <div class="tb-h">ピラティス</div>
+        <div class="tb-b">
+          <div class="slot"><span class="pill day">木曜</span><span class="hrs">10:00〜12:50<br>18:00〜20:50</span></div>
+          <div class="slot"><span class="pill day">日曜</span><span class="hrs">18:00〜20:50</span></div>
+          <p class="foot">担当インストラクターによるレッスンのため、上記曜日・時間帯でのご案内となります。</p>
+        </div>
+      </div>
+      <div class="tb r">
+        <div class="tb-h">ランニング</div>
+        <div class="tb-b">
+          <div class="slot"><span class="pill day">木曜</span><span class="hrs"><span class="lb">30分指導</span>18:00〜18:30<br><span class="lb">60分ラン</span>18:30〜19:30</span></div>
+          <div class="slot"><span class="pill day">土曜</span><span class="hrs"><span class="lb">30分指導</span>13:30〜14:00<br><span class="lb">60分ラン</span>14:00〜15:00</span></div>
+          <p class="foot">※ご予約は上記の曜日でのご案内となります。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-h"><span class="no">03</span><h2>オプション</h2><span class="rule"></span></div>
+    <div class="opt-wrap">
+      <table class="opt">
+        <tr><th rowspan="4">追加チケット</th><td><span class="tag ps">パーソナル</span>パーソナル（指名料込み）30分</td><td class="price"><span class="yen">4,400<small>円</small></span></td></tr>
+        <tr><td><span class="tag pl">ピラティス</span>ピラティスグループレッスン 50分</td><td class="price"><span class="yen">4,400<small>円</small></span></td></tr>
+        <tr><td><span class="tag rn">ランニング</span>グループランニング指導 30分</td><td class="price"><span class="yen">4,400<small>円</small></span></td></tr>
+        <tr><td><span class="tag rn">ランニング</span>グループランニング 60分</td><td class="price"><span class="yen">2,200<small>円</small></span></td></tr>
+        <tr><th>指名料</th><td>1セッション <small>（30分でも60分でも同金額）</small></td><td class="price"><span class="yen">550<small>円</small></span></td></tr>
+        <tr><th>手ぶらセット</th><td>ウェア上下・シューズ・フェイスタオル・バスタオル</td><td class="price"><span class="yen">2,750<small>円</small></span>/月</td></tr>
+        <tr><th>タオルセット</th><td>フェイスタオル・バスタオル</td><td class="price"><span class="yen">1,100<small>円</small></span>/月</td></tr>
+        <tr><th>契約ロッカー</th><td>更衣室 or カウンター前</td><td class="price"><small class="sz">大</small><span class="yen">1,100<small>円</small></span>/月<br><small class="sz">小・カウンター</small><span class="yen">550<small>円</small></span>/月</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <footer>絆Style-gym Legame</footer>
+</div>
+</body>
+</html>
