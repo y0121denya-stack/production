@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>短期集中コース料金表｜絆Style-gym Legame</title>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  :root{
+    --sage:#2fae84; --sage-dk:#17906a; --sage-lt:#d2f2e4; --sage-xl:#d6f1e5;
+    --rose:#d9668c; --rose-dk:#c24874; --rose-lt:#fae1ea;
+    --ink:#2f3b36; --sub:#6c7a74; --line:#9fdcc4;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#fff}
+  body{font-family:"Zen Maru Gothic","IPAGothic",sans-serif;color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{width:210mm;height:297mm;position:relative;overflow:hidden;padding:10mm 12mm 10mm;background:#fff}
+  .blob{position:absolute;border-radius:50%;z-index:0}
+  .blob.b1{width:120mm;height:120mm;background:var(--sage-lt);left:-45mm;top:80mm;opacity:.7}
+  .blob.b2{width:110mm;height:110mm;background:var(--rose-lt);right:-50mm;top:185mm;opacity:.8}
+  .leaf-l{position:absolute;left:-6mm;top:-4mm;width:34mm;z-index:1}
+  .leaf-r{position:absolute;right:-8mm;top:-10mm;width:40mm;z-index:1}
+  header,section{position:relative;z-index:2}
+
+  /* 背景付き文字：line-height:1 + inline-flex で上下左右中央 */
+  .pill{display:inline-flex;align-items:center;justify-content:center;line-height:1;white-space:nowrap}
+
+  header{text-align:center}
+  .script{font-family:"Great Vibes",cursive;font-size:32px;color:var(--sage);line-height:1}
+  h1{font-size:38px;font-weight:900;letter-spacing:.3em;margin:0 0 0 .3em;line-height:1.15}
+  .sub-title{display:inline-block;margin-top:2mm;font-size:15px;font-weight:900;color:var(--sage-dk);letter-spacing:.2em}
+  .entry{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:14px;margin-top:5mm}
+  .entry .fee{background:var(--sage);color:#fff;border-radius:999px;padding:6px 25px 11px 27px;font-weight:700;font-size:15px;letter-spacing:.12em}
+  .entry .fee b{font-size:20px;letter-spacing:.02em;margin-left:4px;font-weight:900}
+  .entry .tax{font-size:10px;color:var(--sub);text-align:left;line-height:1.5}
+
+  section{margin-top:9mm}
+  .sec-h{display:flex;align-items:center;gap:10px;margin-bottom:4mm}
+  .sec-h .no{font-family:"Great Vibes",cursive;color:var(--sage);font-size:28px;line-height:1}
+  .sec-h h2{font-size:22px;font-weight:900;letter-spacing:.14em}
+  .sec-h h2 em{font-style:normal;color:var(--rose-dk)}
+  .sec-h .rule{flex:1;height:0;border-top:2px dashed var(--sage)}
+
+  .yen{font-weight:900;letter-spacing:.01em;line-height:1;white-space:nowrap}
+  .yen small{font-size:.5em;font-weight:900;margin-left:1px}
+
+  /* コースカード（横いっぱい） */
+  .plan{background:#fff;border-radius:16px;overflow:hidden;border:2.5px solid var(--line)}
+  .plan + .plan{margin-top:5mm}
+  .plan-h{background:var(--sage);color:#fff;display:flex;align-items:center;justify-content:center;gap:16px;padding:10px 14px}
+  .plan.p60 .plan-h{background:var(--sage-dk)}
+  .plan-h h3{font-size:17px;font-weight:900;letter-spacing:.12em;line-height:1;white-space:nowrap}
+  .plan-h h3 .k{font-size:13px;letter-spacing:.2em;margin-right:8px;opacity:.95}
+  .plan-h h3 .num{font-size:34px;letter-spacing:0;margin-right:2px}
+  .tags{display:flex;flex-wrap:wrap;gap:5px}
+  .tag{font-size:11.5px;font-weight:700;color:var(--rose-dk);background:#fff;border-radius:999px;padding:5.5px 12px 4.5px 8px;letter-spacing:.05em}
+  .terms{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:10px}
+  .term{background:var(--sage-xl);border-radius:12px;text-align:center;padding:14px 4px 15px}
+  .term .mo{display:inline-block;font-size:15px;font-weight:900;color:var(--sage-dk);letter-spacing:.06em}
+  .term .mo .n{font-size:26px;line-height:1;margin-right:1px}
+  .term .yen{display:block;font-size:30px;margin:10px 0 11px;color:var(--ink)}
+  .term .cnt{font-size:12px;font-weight:700;color:#fff;background:var(--rose);border-radius:999px;padding:4px 14px 5px}
+  .term .cnt b{font-size:15px;margin-right:1px}
+
+  /* 無料サービス */
+  .free-note{display:flex;justify-content:center;margin-bottom:4mm}
+  .free-note .pill{background:var(--rose);color:#fff;font-size:14px;font-weight:900;border-radius:999px;padding:6px 18px 8px;letter-spacing:.12em}
+  .services{display:grid;grid-template-columns:1fr 1fr;gap:4mm}
+  .svc{display:flex;align-items:center;gap:14px;background:#fff;border:2.5px solid var(--line);border-radius:14px;padding:11px 16px}
+  .svc .ic{flex:none;width:46px;height:46px;border-radius:50%;background:var(--sage);display:flex;align-items:center;justify-content:center}
+  .svc .ic svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .svc .nm{font-size:17px;font-weight:900;letter-spacing:.08em}
+  .svc .free{margin-left:auto;font-size:11px;font-weight:900;color:var(--rose-dk);background:var(--rose-lt);border-radius:999px;padding:4px 10px 5px;letter-spacing:.1em}
+
+  footer{position:absolute;left:0;right:0;bottom:7mm;text-align:center;font-size:13px;color:var(--sage-dk);font-weight:700;letter-spacing:.14em;z-index:2}
+  /* 見出しの縦位置をタグとそろえ、余白を広げる */
+  .plan-h h3{display:flex;align-items:baseline;transform:translateY(-2px)}
+  section{margin-top:12mm}
+  .svc{padding:16px 18px}
+  .term{padding:16px 4px 17px}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <img class="leaf-l" src="assets/leaf-a.png" alt="">
+  <img class="leaf-r" src="assets/leaf-b.png" alt="">
+
+  <header>
+    <div class="script">price menu</div>
+    <h1>料金表</h1>
+    <div class="entry">
+      <div></div>
+      <div class="pill fee">全コース｜入会金<b>22,000</b>円</div>
+      <div class="tax">※表示価格は全て税込</div>
+    </div>
+  </header>
+
+  <section>
+    <div class="sec-h"><span class="no">01</span><h2>短期集中コース</h2><span class="rule"></span></div>
+
+    <div class="plan p90">
+      <div class="plan-h">
+        <h3><span class="k">短期集中</span><span class="num">90</span>分コース</h3>
+        <div class="tags"><span class="pill tag">トレーニング</span><span class="pill tag">ストレッチ</span><span class="pill tag">整体</span><span class="pill tag">食事管理</span></div>
+      </div>
+      <div class="terms">
+        <div class="term"><span class="mo"><span class="n">1</span>ヶ月</span><span class="yen">170,000<small>円</small></span><span class="pill cnt"><b>9</b>回</span></div>
+        <div class="term"><span class="mo"><span class="n">2</span>ヶ月</span><span class="yen">288,000<small>円</small></span><span class="pill cnt"><b>17</b>回</span></div>
+        <div class="term"><span class="mo"><span class="n">3</span>ヶ月</span><span class="yen">388,000<small>円</small></span><span class="pill cnt"><b>25</b>回</span></div>
+      </div>
+    </div>
+
+    <div class="plan p60">
+      <div class="plan-h">
+        <h3><span class="k">短期集中</span><span class="num">60</span>分コース</h3>
+        <div class="tags"><span class="pill tag">トレーニング</span><span class="pill tag">ストレッチ</span><span class="pill tag">整体 or 食事管理 or ピラティス</span></div>
+      </div>
+      <div class="terms">
+        <div class="term"><span class="mo"><span class="n">1</span>ヶ月</span><span class="yen">110,000<small>円</small></span><span class="pill cnt"><b>9</b>回</span></div>
+        <div class="term"><span class="mo"><span class="n">2</span>ヶ月</span><span class="yen">198,000<small>円</small></span><span class="pill cnt"><b>17</b>回</span></div>
+        <div class="term"><span class="mo"><span class="n">3</span>ヶ月</span><span class="yen">270,000<small>円</small></span><span class="pill cnt"><b>25</b>回</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-h"><span class="no">02</span><h2>短期集中コースの<em>無料</em>サービス</h2><span class="rule"></span></div>
+    <div class="services">
+      <div class="svc">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10"/><path d="M17 21V3c-2 1-3 4-3 7 0 2 1 3 3 3"/></svg></span>
+        <span class="nm">食事サポート</span>
+      </div>
+      <div class="svc">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M8 3l-5 3 2 4 2-1v12h10V9l2 1 2-4-5-3c-.5 1.5-2 2.5-4 2.5S8.5 4.5 8 3z"/></svg></span>
+        <span class="nm">無料レンタル</span>
+      </div>
+      <div class="svc">
+        <span class="ic"><svg viewBox="0 0 24 24"><circle cx="10" cy="11" r="7"/><circle cx="10" cy="11" r="2"/><path d="M17 11h4v6h-4M19 11v2"/></svg></span>
+        <span class="nm">周径囲測定＆撮影</span>
+      </div>
+      <div class="svc">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M3 9v6M6 7v10M18 7v10M21 9v6M6 12h12"/></svg></span>
+        <span class="nm">施設通い放題</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>絆Style-gym Legame</footer>
+</div>
+</body>
+</html>
