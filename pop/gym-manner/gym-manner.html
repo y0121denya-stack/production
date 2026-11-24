@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
 <style>
   @page { size: A4; margin: 0; }
-  :root { --green: #1f7a4a; --green-light: #e8f3ec; }
+  :root { --green: #1f7a4a; --green-light: #e8f3ec; --ink: #222; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { background: #fff; }
   body {
@@ -54,8 +54,9 @@
     padding-bottom: 2mm; margin-bottom: 3mm;
     border-bottom: 0.3mm dashed var(--green);
   }
-  .item p { font-size: 14pt; line-height: 1.85; }
-  strong { font-weight: 900; background: linear-gradient(transparent 62%, var(--green-light) 62%); }
+  .item p { font-size: 14pt; line-height: 1.85; color: var(--ink); }
+  .lead, .footer .thanks { color: var(--ink); }
+  strong { color: var(--green); font-weight: 900; background: linear-gradient(transparent 62%, var(--green-light) 62%); }
   .footer {
     text-align: center; padding-top: 7mm;
     border-top: 0.4mm solid var(--green);
