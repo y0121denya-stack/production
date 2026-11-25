@@ -191,6 +191,9 @@
   /* 90分・60分で列幅をそろえる */
   table.cmp{table-layout:fixed}
   .cmp td.term .pil{font-size:8.5px}
+  /* （ピラティスの場合…）をセル中央に：左右の余白を詰めて、はみ出しても中央基準にする */
+  .cmp td.term{padding-left:2px !important;padding-right:2px !important}
+  .cmp td.term .pil{display:block;width:max-content;margin-left:50%;transform:translateX(-50%)}
 </style>
 </head>
 <body>
