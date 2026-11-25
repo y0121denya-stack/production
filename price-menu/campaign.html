@@ -181,6 +181,16 @@
   footer{bottom:5mm}
   /* 比較表の外枠をなくす（角丸はそのまま） */
   .cmp-wrap{border:4px solid #fff !important;background:#fff !important}
+  .cmp td.term .pil{display:block;font-size:9.5px;font-weight:900;color:var(--rose-dk);margin-top:3px;letter-spacing:0;white-space:nowrap}
+  /* 追記で増えた縦幅を吸収 */
+  .cmp td.term .pil{margin-top:2px}
+  .t60 .cmp td{padding-top:5px !important;padding-bottom:5px !important}
+  section{margin-top:4.5mm}
+  .notice{margin-top:3mm !important;line-height:1.55}
+  footer{bottom:4mm}
+  /* 90分・60分で列幅をそろえる */
+  table.cmp{table-layout:fixed}
+  .cmp td.term .pil{font-size:8.5px}
 </style>
 </head>
 <body>
@@ -221,8 +231,8 @@
         <tr><th class="termh">期間</th><th class="reg">通常価格</th>
           <th class="cash"><span class="how">現金払い・振込<small>&nbsp;</small></span><span class="off"><b>20</b>%OFF</span></th>
           <th class="card"><span class="how">クレジットカード・QR決済<small>（あとで分割OK）</small></span><span class="off"><b>15</b>%OFF</span></th></tr>
-          <tr><td class="term"><span class="n">2</span>ヶ月</td><td class="reg"><span class="yen">198,000<small>円</small></span></td><td class="cash"><span class="yen">158,400<small>円</small></span></td><td class="card"><span class="yen">168,300<small>円</small></span></td></tr>
-          <tr><td class="term"><span class="n">3</span>ヶ月</td><td class="reg"><span class="yen">270,000<small>円</small></span></td><td class="cash"><span class="yen">216,000<small>円</small></span></td><td class="card"><span class="yen">229,500<small>円</small></span></td></tr>
+          <tr><td class="term"><span class="n">2</span>ヶ月<span class="pil">（ピラティスの場合は3ヶ月）</span></td><td class="reg"><span class="yen">198,000<small>円</small></span></td><td class="cash"><span class="yen">158,400<small>円</small></span></td><td class="card"><span class="yen">168,300<small>円</small></span></td></tr>
+          <tr><td class="term"><span class="n">3</span>ヶ月<span class="pil">（ピラティスの場合は4ヶ月）</span></td><td class="reg"><span class="yen">270,000<small>円</small></span></td><td class="cash"><span class="yen">216,000<small>円</small></span></td><td class="card"><span class="yen">229,500<small>円</small></span></td></tr>
       </table>
     </div>
   </section>
