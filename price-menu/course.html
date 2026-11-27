@@ -145,6 +145,19 @@
   .op .yen{font-size:17px}
   .orow .tag{flex:none;display:inline-flex;align-items:center;justify-content:center;line-height:1;font-size:9px;font-weight:900;color:#fff;border-radius:999px;padding:3.5px 7px;width:64px}
   .orow .tag.ps{background:var(--sage-dk)} .orow .tag.pl{background:var(--rose)} .orow .tag.rn{background:var(--emr)}
+  /* 単品料金（横1列） */
+  .single{display:flex;align-items:center;gap:10px;margin-top:3mm;background:#fff;border:2.5px solid var(--line);border-radius:14px;padding:7px 12px}
+  .single .sh{flex:none;background:var(--sage);color:#fff;font-size:12px;font-weight:900;border-radius:999px;padding:5px 12px;letter-spacing:.1em}
+  .sitems{flex:1;display:grid;grid-template-columns:repeat(4,1fr)}
+  .si{display:flex;align-items:center;justify-content:center;gap:6px;padding:0 4px}
+  .si + .si{border-left:1.5px dashed var(--line)}
+  .snm{font-size:11.5px;font-weight:900;line-height:1.2;text-align:center}
+  .snm small{display:block;font-size:8px;font-weight:700;color:var(--sub)}
+  .si .yen{font-size:15px}
+  /* 単品料金のぶん縦幅を詰める */
+  section{margin-top:3mm !important}
+  .orow{padding:6px 0 !important}
+  .cc{padding-top:10px !important;padding-bottom:10px !important}
 </style>
 </head>
 <body>
@@ -232,6 +245,15 @@
           <div class="orow"><span class="onm"><span class="ot">契約ロッカー（大）<span class="osub">更衣室 or カウンター前</span></span></span><span class="dots"></span><span class="op"><span class="yen">1,100<small>円</small></span>/月</span></div>
           <div class="orow"><span class="onm"><span class="ot">契約ロッカー（小・カウンター）</span></span><span class="dots"></span><span class="op"><span class="yen">550<small>円</small></span>/月</span></div>
         </div>
+      </div>
+    </div>
+    <div class="single">
+      <span class="pill sh">単品料金</span>
+      <div class="sitems">
+        <div class="si"><span class="snm">シューズ</span><span class="yen">330<small>円</small></span></div>
+        <div class="si"><span class="snm">ウェア（上下）</span><span class="yen">330<small>円</small></span></div>
+        <div class="si"><span class="snm">タオル<small>ハンドタオル・バスタオル</small></span><span class="yen">330<small>円</small></span></div>
+        <div class="si"><span class="snm">靴下<small>販売</small></span><span class="yen">330<small>円</small></span></div>
       </div>
     </div>
   </section>
