@@ -158,6 +158,22 @@
   section{margin-top:3mm !important}
   .orow{padding:6px 0 !important}
   .cc{padding-top:10px !important;padding-bottom:10px !important}
+  /* 単品：レンタルと販売をグループで区別 */
+  .single{gap:8px;padding:6px 8px}
+  .sgrp{display:flex;align-items:center;gap:8px;border-radius:10px;padding:6px 10px}
+  .sgrp.rent{flex:3;background:var(--sage-xl)}
+  .sgrp.sale{flex:1;background:var(--rose-xl,#fcebf1)}
+  .sgrp .gt{flex:none;font-size:11px;font-weight:900;color:#fff;border-radius:999px;padding:4.5px 10px;letter-spacing:.08em}
+  .sgrp.rent .gt{background:var(--sage-dk)}
+  .sgrp.sale .gt{background:var(--rose-dk)}
+  .sitems.c3{grid-template-columns:repeat(3,1fr)}
+  .sitems.c1{grid-template-columns:1fr}
+  .sgrp.rent .si + .si{border-left:1.5px dashed var(--line)}
+  .snm{white-space:nowrap}
+  .sgrp.rent{flex:4}
+  .sgrp .si{gap:5px;padding:0 3px}
+  .sgrp .snm{font-size:11px}
+  .sgrp .si .yen{font-size:14px}
 </style>
 </head>
 <body>
@@ -249,12 +265,21 @@
     </div>
     <div class="single">
       <span class="pill sh">単品料金</span>
-      <div class="sitems">
-        <div class="si"><span class="snm">シューズ</span><span class="yen">330<small>円</small></span></div>
-        <div class="si"><span class="snm">ウェア（上下）</span><span class="yen">330<small>円</small></span></div>
-        <div class="si"><span class="snm">タオル<small>フェイスタオル・<br>バスタオル</small></span><span class="yen">330<small>円</small></span></div>
-        <div class="si"><span class="snm">靴下<small>販売</small></span><span class="yen">330<small>円</small></span></div>
+      <div class="sgrp rent">
+        <span class="pill gt">レンタル</span>
+        <div class="sitems c3">
+          <div class="si"><span class="snm">シューズ</span><span class="yen">330<small>円</small></span></div>
+          <div class="si"><span class="snm">ウェア（上下）</span><span class="yen">330<small>円</small></span></div>
+          <div class="si"><span class="snm">タオル<small>フェイスタオル・<br>バスタオル</small></span><span class="yen">330<small>円</small></span></div>
+        </div>
       </div>
+      <div class="sgrp sale">
+        <span class="pill gt">販売</span>
+        <div class="sitems c1">
+          <div class="si"><span class="snm">靴下</span><span class="yen">330<small>円</small></span></div>
+        </div>
+      </div>
+    </div>
     </div>
   </section>
 
